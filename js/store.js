@@ -318,10 +318,18 @@ export function zonePickIndex(z, bay) {
   return best;
 }
 
+// Zone whose match string fits best, longest wins
 export function findZone(L, text) {
   const t = String(text || '').toUpperCase();
   if (!t) return -1;
-  return (L.zones || []).findIndex(z => (z.match || []).some(m => m && t.includes(String(m).toUpperCase())));
+  let best = -1, bestLen = 0;
+  (L.zones || []).forEach((z, i) => {
+    for (const m of z.match || []) {
+      const s = String(m).toUpperCase();
+      if (s && s.length > bestLen && t.includes(s) && (z.picks || []).length) { best = i; bestLen = s.length; }
+    }
+  });
+  return best;
 }
 
 // Catalog location to a map spot

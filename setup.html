@@ -34,7 +34,20 @@
         <div class="grow"><label for="step-len">Step length (m)</label><input type="number" id="step-len" step="0.01" min="0.3" max="1.2" inputmode="decimal"></div>
       </div>
       <p class="muted small">Step length starts as a guess from your height. To check it, walk 10 steps along floor tiles: most store tiles are 1 foot (0.305 m) wide.</p>
-      <label class="check"><input type="checkbox" id="snap" checked> Walls and aisles are straight (snap turns to right angles)</label>
+      <div class="row">
+        <div class="grow"><label for="snap">Turns snap to</label>
+          <select id="snap">
+            <option value="90">Right angles (most stores)</option>
+            <option value="45">Right angles and 45 degree walls</option>
+            <option value="0">Off (any angle)</option>
+          </select></div>
+        <div class="grow"><label for="rows">Aisles in this store</label>
+          <select id="rows">
+            <option value="1">One row, front to back</option>
+            <option value="2">Two rows with a cross aisle</option>
+          </select></div>
+      </div>
+      <p class="muted small">If the store isn't a plain rectangle, keep right angles on and tap Corner at each corner during the loop. Use 45 degrees only if some walls are angled.</p>
       <button id="sensor-btn">Allow motion and compass</button>
       <p id="sensor-status" class="small" aria-live="polite"></p>
       <label class="check"><input type="checkbox" id="manual"> Manual mode (tap for each step and turn)</label>
@@ -71,7 +84,10 @@
           <div class="grow"><label for="exit-steps">The exit is this many steps from where I started</label><input type="number" id="exit-steps" min="0" max="200" value="0" inputmode="numeric"></div>
           <div class="grow"><label for="exit-side">To my</label><select id="exit-side"><option value="right">right (facing in)</option><option value="left">left (facing in)</option></select></div>
         </div>
-        <button class="primary" id="perimeter-done">I'm back at the exit</button>
+        <div class="row">
+          <button id="corner-btn">Corner here</button>
+          <button class="primary grow" id="perimeter-done">I'm back at the exit</button>
+        </div>
       </div>
 
       <div class="panel stack" id="phase-checkout" hidden>
@@ -100,7 +116,19 @@
 
       <div class="panel stack" id="marks-panel">
         <h3>Mark where you are</h3>
-        <div class="chips" id="dept-marks"></div>
+        <p class="muted small">Tap a department when you are next to it. If a sign shows a number, like Produce table 2 or Deli 5, type it first.</p>
+        <div class="row">
+          <div><label for="section-num" class="small">Section number (optional)</label><input type="text" id="section-num" class="aisle-num" inputmode="numeric"></div>
+        </div>
+        <div id="dept-marks"></div>
+        <details>
+          <summary>Custom area</summary>
+          <div class="stack">
+            <input type="text" id="custom-name" placeholder="Name, like Seasonal or Hot case" aria-label="Custom area name">
+            <input type="text" id="custom-words" placeholder="Words on Kroger's site for it (optional)" aria-label="Kroger words for the area">
+            <button id="custom-btn">Mark custom area here</button>
+          </div>
+        </details>
         <div class="row">
           <input type="text" id="note-text" class="grow" placeholder="Note, like pillar or big display" aria-label="Note text">
           <button id="note-btn">Add note</button>
@@ -115,6 +143,17 @@
         <p id="finish-report"></p>
         <div class="map-box"><svg id="finish-map" role="img" aria-label="Traced store map"></svg></div>
         <ul class="problems small" id="finish-problems"></ul>
+        <div class="stack">
+          <div><label for="finish-rows">Aisles in this store</label>
+            <select id="finish-rows">
+              <option value="1">One row, front to back</option>
+              <option value="2">Two rows with a cross aisle</option>
+            </select></div>
+          <label class="check"><input type="checkbox" id="opt-lineup" checked> Line up the aisle ends</label>
+          <label class="check"><input type="checkbox" id="opt-even" checked> Space the aisles evenly by number</label>
+          <label class="check"><input type="checkbox" id="opt-fill" checked> Fill in aisles I skipped</label>
+          <p class="muted small">These clean up step counting drift. Turn them off to see the walk exactly as recorded.</p>
+        </div>
         <div class="row">
           <button class="primary" id="save-layout">Use this map in Skein</button>
           <a class="btn" href="editor.html" id="open-editor" hidden>Fine tune it in the editor</a>

@@ -58,6 +58,25 @@
         </div>
 
         <details class="panel">
+          <summary>Generate a starting layout</summary>
+          <form id="gen" class="stack">
+            <p class="muted small">Builds a whole store from a few numbers: produce on the left, meat and seafood at the back, dairy on the right, aisles in the middle. Lengths take meters or steps.</p>
+            <div class="row">
+              <div class="grow"><label for="g-width">Store width</label><input type="text" id="g-width" value="92"></div>
+              <div class="grow"><label for="g-depth">Front to back</label><input type="text" id="g-depth" value="48"></div>
+            </div>
+            <div class="row">
+              <div class="grow"><label for="g-count">Aisles</label><input type="text" id="g-count" value="25" inputmode="numeric"></div>
+              <div class="grow"><label for="g-first">First number</label><input type="text" id="g-first" value="1" inputmode="numeric"></div>
+            </div>
+            <div><label for="g-rows">Aisle rows</label>
+              <select id="g-rows"><option value="1">One row, front to back</option><option value="2">Two rows with a cross aisle</option></select></div>
+            <label class="check"><input type="checkbox" id="g-rtl"> Numbers go right to left</label>
+            <button type="submit" class="primary">Replace my layout with this</button>
+          </form>
+        </details>
+
+        <details class="panel">
           <summary>Add a row of aisles</summary>
           <form id="quick" class="stack">
             <div class="row">

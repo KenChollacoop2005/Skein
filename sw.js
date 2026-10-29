@@ -1,4 +1,4 @@
-const CACHE = 'skein-v2';
+const CACHE = 'skein-v3';
 const ASSETS = [
   './', 'index.html', 'setup.html', 'editor.html', 'race.html', 'manifest.webmanifest',
   'css/skein.css',
@@ -6,7 +6,7 @@ const ASSETS = [
   'icons/icon.svg', 'icons/favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/app.js', 'js/storage.js', 'js/store.js', 'js/graph.js', 'js/route.js', 'js/match.js', 'js/plan.js',
   'js/map-svg.js', 'js/ui-list.js', 'js/ui-route.js', 'js/ui-print.js', 'js/editor.js',
-  'js/physarum.js', 'js/race.js', 'js/sensors.js', 'js/trace.js', 'js/setup.js',
+  'js/physarum.js', 'js/race.js', 'js/sensors.js', 'js/trace.js', 'js/setup.js', 'js/departments.js', 'js/layoutgen.js',
   'data/store.json', 'data/catalog.json'
 ];
 

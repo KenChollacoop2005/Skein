@@ -1,6 +1,7 @@
 import * as S from './store.js';
 import { drawStore, el, pts, viewBoxFor } from './map-svg.js';
 import { load, save, registerWorker } from './storage.js';
+import { generateLayout } from './layoutgen.js';
 
 const SNAP = 0.25; // snap grid in meters
 const TAP_PX = 8; // max finger travel for a tap
@@ -504,6 +505,24 @@ function bindUI() {
     const [x, y] = toMap(e.clientX, e.clientY);
     zoomAt(x, y, e.deltaY > 0 ? 1.15 : 1 / 1.15);
   }, { passive: false });
+
+  $('gen').addEventListener('submit', e => {
+    e.preventDefault();
+    try {
+      const next = generateLayout({
+        width: len($('g-width').value), depth: len($('g-depth').value),
+        aisles: Number($('g-count').value), first: Number($('g-first').value),
+        rows: Number($('g-rows').value), rtl: $('g-rtl').checked
+      });
+      if (!confirm('Replace your layout with a generated one? You can undo this.')) return;
+      commit(() => { L = next; });
+      view = viewBoxFor(L);
+      selected = null;
+      render();
+    } catch (err) {
+      $('hint').textContent = err.message;
+    }
+  });
 
   $('quick').addEventListener('submit', e => {
     e.preventDefault();

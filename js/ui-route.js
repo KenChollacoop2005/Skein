@@ -1,4 +1,7 @@
-import { drawStore, drawThread, drawStopMarker, el } from './map-svg.js';
+import { drawStore, drawThread, drawStopMarker, el, viewBoxFor } from './map-svg.js';
+
+const MARK_SCALE = 55; // store widths per marker radius
+const THREAD_SCALE = 140; // store widths per thread width
 
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 const meters = m => `${Math.round(m)} m`;
@@ -12,15 +15,18 @@ export function minutes(length, speed) {
 export function drawPlanMap(svg, L, plan) {
   const layers = drawStore(svg, L);
   if (!plan) return layers;
-  drawThread(layers.route, plan.line, 0.55);
+  const w = viewBoxFor(L)[2];
+  const mr = Math.max(0.95, w / MARK_SCALE);
+  drawThread(layers.route, plan.line, Math.max(0.55, w / THREAD_SCALE));
   plan.stops.forEach((s, i) => {
-    const g = drawStopMarker(layers.top, s.point, String(i + 1));
-    if (s.approx) el('circle', { cx: s.point[0], cy: s.point[1], r: 1.3, fill: 'none', stroke: '#B23B2E', 'stroke-width': 0.12, 'stroke-dasharray': '0.3 0.25' }, g);
+    const g = drawStopMarker(layers.top, s.point, String(i + 1), { r: mr });
+    if (s.approx) el('circle', { cx: s.point[0], cy: s.point[1], r: mr * 1.35, fill: 'none', stroke: '#B23B2E', 'stroke-width': mr * 0.12, 'stroke-dasharray': `${mr * 0.3} ${mr * 0.25}` }, g);
   });
   const r = plan.registerPoint;
   if (r) {
-    el('rect', { x: r[0] - 0.8, y: r[1] - 0.8, width: 1.6, height: 1.6, rx: 0.3, fill: '#3B4A6B', stroke: '#FBF8F2', 'stroke-width': 0.15 }, layers.top);
-    el('text', { x: r[0], y: r[1] + 2.0, 'text-anchor': 'middle', 'font-size': 1.0, 'font-weight': 700, fill: '#3B4A6B' }, layers.top, 'Out');
+    const k = Math.max(1, w / 60);
+    el('rect', { x: r[0] - 0.8 * k, y: r[1] - 0.8 * k, width: 1.6 * k, height: 1.6 * k, rx: 0.3 * k, fill: '#3B4A6B', stroke: '#FBF8F2', 'stroke-width': 0.15 * k }, layers.top);
+    el('text', { x: r[0], y: r[1] + 2.0 * k, 'text-anchor': 'middle', 'font-size': 1.0 * k, 'font-weight': 700, fill: '#3B4A6B' }, layers.top, 'Out');
   }
   return layers;
 }
