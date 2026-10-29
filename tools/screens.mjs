@@ -9,7 +9,7 @@ const PORT = 8099; // local QA server port
 const BASE = `http://localhost:${PORT}/`;
 const OUT = new URL('../media/screens/', import.meta.url);
 const SIZES = [[390, 844], [1440, 900]]; // phone and desktop
-const PAGES = ['index.html', 'editor.html', 'race.html'];
+const PAGES = ['index.html', 'setup.html', 'editor.html', 'race.html'];
 const PRINT_COUNTS = [5, 15, 25]; // list sizes for the print check
 const DEMO = 'milk\neggs\npeanut butter\nbananas\nground beef\nfrozen pizza\ncereal\ncoffee\nbagels\npaper towels\nshampoo\nsalsa';
 

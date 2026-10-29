@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skein: store setup</title>
+  <meta name="theme-color" content="#F3EEE4">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/skein.css">
+</head>
+<body>
+  <header class="top">
+    <a class="wordmark" href="./" aria-label="Skein home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 24V6h6v14h6V6h6v14h3" fill="none" stroke="#B23B2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Skein
+    </a>
+    <nav class="nav" aria-label="Pages">
+      <a href="./">Plan</a>
+      <a href="setup.html" aria-current="page">Setup</a>
+      <a href="editor.html">Editor</a>
+      <a href="race.html">Race</a>
+    </nav>
+  </header>
+
+  <main class="wrap setup">
+    <section class="panel stack" id="prep">
+      <h2>Trace the store by walking it</h2>
+      <p>Skein counts your steps and reads the compass while you walk, and turns the walk into a store map. It takes one trip: the outside loop, the checkout, then each aisle.</p>
+      <p class="muted small">Hold the phone in front of you, screen up, pointing where you walk. Walk at your normal pace. Everything saves as you go.</p>
+      <div class="row">
+        <div class="grow"><label for="height-ft">Your height (ft)</label><input type="number" id="height-ft" min="3" max="8" inputmode="numeric"></div>
+        <div class="grow"><label for="height-in">(in)</label><input type="number" id="height-in" min="0" max="11" inputmode="numeric"></div>
+        <div class="grow"><label for="step-len">Step length (m)</label><input type="number" id="step-len" step="0.01" min="0.3" max="1.2" inputmode="decimal"></div>
+      </div>
+      <p class="muted small">Step length starts as a guess from your height. To check it, walk 10 steps along floor tiles: most store tiles are 1 foot (0.305 m) wide.</p>
+      <label class="check"><input type="checkbox" id="snap" checked> Walls and aisles are straight (snap turns to right angles)</label>
+      <button id="sensor-btn">Allow motion and compass</button>
+      <p id="sensor-status" class="small" aria-live="polite"></p>
+      <label class="check"><input type="checkbox" id="manual"> Manual mode (tap for each step and turn)</label>
+      <div class="row">
+        <button class="primary grow" id="start-btn">I'm at the entrance, facing in. Start</button>
+        <button id="resume-btn" hidden>Resume my saved walk</button>
+      </div>
+    </section>
+
+    <section id="walking" hidden>
+      <div class="panel">
+        <div class="setup-stats" aria-live="polite">
+          <div><b id="st-steps">0</b>steps</div>
+          <div><b id="st-meters">0 m</b>walked</div>
+          <div><b id="st-heading">ahead</b>direction</div>
+        </div>
+        <div class="map-box"><svg id="walk-map" role="img" aria-label="Your walk so far"></svg></div>
+        <div class="row setup-controls">
+          <button id="pause-btn" aria-pressed="false">Pause</button>
+          <button id="undo-steps">Remove last 5 steps</button>
+          <label class="check"><input type="checkbox" id="manual-walk"> Manual mode</label>
+        </div>
+        <div class="row setup-controls" id="manual-controls" hidden>
+          <button id="turn-left">Turn left</button>
+          <button class="primary grow" id="step-btn">Step</button>
+          <button id="turn-right">Turn right</button>
+        </div>
+      </div>
+
+      <div class="panel stack" id="phase-perimeter" hidden>
+        <h2>1. Walk the outside loop</h2>
+        <p>Walk along the walls all the way around the store, about an arm's length from the shelves, and come back to the exit. Tap a department when you are next to it. Tap it again at the other end of a long wall like Dairy or Meat.</p>
+        <div class="row">
+          <div class="grow"><label for="exit-steps">The exit is this many steps from where I started</label><input type="number" id="exit-steps" min="0" max="200" value="0" inputmode="numeric"></div>
+          <div class="grow"><label for="exit-side">To my</label><select id="exit-side"><option value="right">right (facing in)</option><option value="left">left (facing in)</option></select></div>
+        </div>
+        <button class="primary" id="perimeter-done">I'm back at the exit</button>
+      </div>
+
+      <div class="panel stack" id="phase-checkout" hidden>
+        <h2>2. Mark the checkout</h2>
+        <p>Walk to the self checkout. Tap Mark at each spot where you would end a trip. Then tap Done.</p>
+        <div class="row">
+          <button class="primary grow" id="mark-register">Mark checkout here</button>
+          <button id="checkout-done">Done with checkout</button>
+        </div>
+        <p class="small muted" id="register-count"></p>
+      </div>
+
+      <div class="panel stack" id="phase-aisles" hidden>
+        <h2>3. Walk each aisle</h2>
+        <p>Go to the front end of an aisle, check the number, and tap Start. Walk down the middle to the back end and tap End. Walk to the next aisle and repeat.</p>
+        <div class="row">
+          <div><label for="aisle-num">Aisle number</label><input type="text" id="aisle-num" value="1" inputmode="numeric" class="aisle-num"></div>
+          <button class="primary grow" id="aisle-btn">Start aisle 1</button>
+        </div>
+        <p class="small" id="aisle-status" aria-live="polite"></p>
+        <div class="row">
+          <button id="aisle-undo">Undo last aisle</button>
+          <button id="aisles-done">Done with aisles</button>
+        </div>
+      </div>
+
+      <div class="panel stack" id="marks-panel">
+        <h3>Mark where you are</h3>
+        <div class="chips" id="dept-marks"></div>
+        <div class="row">
+          <input type="text" id="note-text" class="grow" placeholder="Note, like pillar or big display" aria-label="Note text">
+          <button id="note-btn">Add note</button>
+        </div>
+        <p class="small muted" id="mark-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="finish" hidden>
+      <div class="panel stack">
+        <h2>Your traced store</h2>
+        <p id="finish-report"></p>
+        <div class="map-box"><svg id="finish-map" role="img" aria-label="Traced store map"></svg></div>
+        <ul class="problems small" id="finish-problems"></ul>
+        <div class="row">
+          <button class="primary" id="save-layout">Use this map in Skein</button>
+          <a class="btn" href="editor.html" id="open-editor" hidden>Fine tune it in the editor</a>
+        </div>
+        <div class="row">
+          <button id="dl-layout">Download store.json</button>
+          <button id="dl-walk">Download walk data</button>
+          <button id="share-walk" hidden>Share walk data</button>
+        </div>
+        <p class="muted small">Send the walk data file to keep the raw steps and marks. It can be turned into a better map later without walking again.</p>
+        <div class="row">
+          <button id="back-walk">Keep walking</button>
+          <button id="new-walk">Start a new walk</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/setup.js"></script>
+</body>
+</html>

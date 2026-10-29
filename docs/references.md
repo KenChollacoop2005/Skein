@@ -19,3 +19,8 @@
 - W3C, WCAG 2.1 contrast ratio definition (1.4.3): https://www.w3.org/TR/WCAG21/#contrast-minimum
 - MDN, Service Worker API and Cache API: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 - Web.dev, Web app manifest: https://web.dev/articles/add-manifest
+- Harle, R. (2013). A survey of indoor inertial positioning systems for pedestrians. IEEE Communications Surveys and Tutorials 15(3), 1281 to 1293.
+- Weinberg, H. (2002). Using the ADXL202 in pedometer and personal navigation applications. Analog Devices application note AN-602.
+- W3C, DeviceOrientation Event Specification (devicemotion, deviceorientationabsolute, requestPermission): https://www.w3.org/TR/orientation-event/
+- Douglas, D. H. and Peucker, T. K. (1973). Algorithms for the reduction of the number of points required to represent a digitized line. The Canadian Cartographer 10(2), 112 to 122.
+- MDN, Screen Wake Lock API: https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API

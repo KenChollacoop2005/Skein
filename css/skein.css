@@ -304,3 +304,10 @@ dialog.sheet::backdrop { background: rgba(36, 34, 31, 0.35); }
 @media (min-width: 1000px) {
   .race-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
 }
+
+/* Setup walk */
+.setup-stats { display: flex; gap: 20px; margin-bottom: 10px; }
+.setup-stats b { display: block; font-family: var(--font-mark); font-weight: 600; font-size: 24px; }
+.setup .map-box svg { max-height: 52vh; }
+.setup-controls { margin-top: 10px; }
+.aisle-num { width: 6em; }
