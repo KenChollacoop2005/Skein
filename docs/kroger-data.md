@@ -64,7 +64,7 @@ The data alone can't tell whether bay 1 is at the front or the back of an aisle,
 
 ## How descriptions map to layout zones
 
-Zones in `data/store.json` carry match strings. An item goes to the first zone whose match string appears in its description. Otherwise it goes to the aisle with the same number.
+Zones carry match strings. An item goes to the zone with the longest match string found in its description, so "PRODUCE TABLE 2" beats "PRODUCE". Otherwise it goes to the aisle with the same number. The full department list with fallbacks (Fruit and Vegetables to Produce, Seafood to Meat, Sushi and hot foods to Deli) is in `js/departments.js`; the Setup walk uses it.
 
 | Zone | Match strings |
 |---|---|

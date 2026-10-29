@@ -1,28 +1,24 @@
 import { advance } from './sensors.js';
 import { normalizeLayout, bounds } from './store.js';
+import { DEPARTMENTS, sectionInfo } from './departments.js';
 
 export const WALL_GAP = 0.8; // meters between your path and the wall
 export const SIMPLIFY = 1.0; // outline corner tolerance in meters
 export const BAY_WIDTH = 1.22; // one 4 ft shelf bay in meters
 export const AISLE_WIDTH = 2.1; // default walkway width
+export const SHELF = 0.6; // shelf depth each side
+export const MIN_WALKWAY = 1.2; // narrowest walkway allowed
 export const ZONE_PAD = 1.5; // zone size around its marks
 const MARGIN = 1; // meters from the origin after shifting
 
-// Department marks and how they map to Kroger data
-export const DEPARTMENTS = {
-  Produce: { match: ['PRODUCE', 'FRUIT', 'VEGETABLES'], cold: false, bays: 25 },
-  Bakery: { match: ['BAKERY'], cold: false, bays: 6 },
-  Deli: { match: ['DELI'], cold: true, bays: 12 },
-  Meat: { match: ['MEAT'], cold: true, bays: 40 },
-  Seafood: { match: ['SEAFOOD'], cold: true, bays: 10 },
-  Dairy: { match: ['DAIRY'], cold: true, bays: 40 },
-  Pharmacy: { match: ['PHARMACY'], cold: false, bays: 4 },
-  Checklanes: { match: ['CHECKLANE'], cold: false, bays: 12 }
-};
+export const ARRANGE = { lineUp: true, even: true, fill: true }; // default aisle cleanup
 
-export function newWalk(stepLength, snap = true) {
-  return { version: 1, started: new Date().toISOString(), stepLength, snap, startHeading: null, exit: { steps: 0, side: 'right' }, steps: [], marks: [] };
+export function newWalk(stepLength, snap = 90, rows = 1) {
+  return { version: 2, started: new Date().toISOString(), stepLength, snap, rows, startHeading: null, exit: { steps: 0, side: 'right' }, steps: [], marks: [] };
 }
+
+// Snap angle from old and new walk files
+export const snapStep = walk => (walk.snap === true ? 90 : walk.snap === false ? 0 : Number(walk.snap) || 0);
 
 // Position after each step, starting at the entrance
 export function positions(walk) {
@@ -49,23 +45,28 @@ export function closeLoop(points, end, target) {
   });
 }
 
-// Ramer, Douglas and Peucker line simplification
-export function simplify(pts, tol) {
-  if (pts.length < 3) return pts.slice();
-  const keep = new Uint8Array(pts.length);
-  keep[0] = keep[pts.length - 1] = 1;
-  const stack = [[0, pts.length - 1]];
+function rdp(pts, a, b, tol, keep) {
+  const stack = [[a, b]];
   while (stack.length) {
-    const [a, b] = stack.pop();
-    const [x1, y1] = pts[a], [x2, y2] = pts[b];
+    const [i0, i1] = stack.pop();
+    const [x1, y1] = pts[i0], [x2, y2] = pts[i1];
     const len = Math.hypot(x2 - x1, y2 - y1) || 1e-9;
     let best = -1, bestD = tol;
-    for (let i = a + 1; i < b; i++) {
+    for (let i = i0 + 1; i < i1; i++) {
       const d = Math.abs((x2 - x1) * (y1 - pts[i][1]) - (x1 - pts[i][0]) * (y2 - y1)) / len;
       if (d > bestD) { bestD = d; best = i; }
     }
-    if (best >= 0) { keep[best] = 1; stack.push([a, best], [best, b]); }
+    if (best >= 0) { keep[best] = 1; stack.push([i0, best], [best, i1]); }
   }
+}
+
+// Ramer, Douglas and Peucker, with corners you marked kept
+export function simplify(pts, tol, corners = []) {
+  if (pts.length < 3) return pts.slice();
+  const keep = new Uint8Array(pts.length);
+  const fixed = [...new Set([0, pts.length - 1, ...corners.filter(i => i > 0 && i < pts.length - 1)])].sort((a, b) => a - b);
+  for (const i of fixed) keep[i] = 1;
+  for (let k = 1; k < fixed.length; k++) rdp(pts, fixed[k - 1], fixed[k], tol, keep);
   return pts.filter((_, i) => keep[i]);
 }
 
@@ -109,12 +110,110 @@ function tidy(poly) {
 }
 
 const round = p => [Math.round(p[0] * 100) / 100, Math.round(p[1] * 100) / 100];
+const dot = (p, u) => p[0] * u[0] + p[1] * u[1];
+const median = list => { const s = [...list].sort((a, b) => a - b); const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+
+// Split aisles into rows at the biggest gap
+function rowGroups(aisles, rows, u) {
+  if (rows < 2 || aisles.length < 2) return [aisles];
+  const mids = aisles.map(a => ({ a, m: (dot(a.start, u) + dot(a.end, u)) / 2 })).sort((x, y) => x.m - y.m);
+  let cut = 1, gap = -1;
+  for (let i = 1; i < mids.length; i++) if (mids[i].m - mids[i - 1].m > gap) { gap = mids[i].m - mids[i - 1].m; cut = i; }
+  return [mids.slice(0, cut).map(x => x.a), mids.slice(cut).map(x => x.a)];
+}
+
+// Line up, space and fill in walked aisles
+export function arrangeAisles(aisles, rows = 1, opts = ARRANGE) {
+  const o = { ...ARRANGE, ...opts };
+  if (!aisles.length || !(o.lineUp || o.even || o.fill)) return { aisles, filled: [] };
+  let ux = 0, uy = 0;
+  const first = [aisles[0].end[0] - aisles[0].start[0], aisles[0].end[1] - aisles[0].start[1]];
+  for (const a of aisles) {
+    let dx = a.end[0] - a.start[0], dy = a.end[1] - a.start[1];
+    const l = Math.hypot(dx, dy) || 1;
+    dx /= l; dy /= l;
+    const s = dx * first[0] + dy * first[1] < 0 ? -1 : 1;
+    ux += s * dx; uy += s * dy;
+  }
+  const ul = Math.hypot(ux, uy) || 1;
+  const u = [ux / ul, uy / ul], n = [-u[1], u[0]];
+  const out = [], filled = [];
+  for (const group of rowGroups(aisles, rows, u)) {
+    const info = group.map(a => {
+      const flip = (a.end[0] - a.start[0]) * u[0] + (a.end[1] - a.start[1]) * u[1] < 0;
+      const s = dot(flip ? a.end : a.start, u), e = dot(flip ? a.start : a.end, u);
+      return { a, flip, s, e, p: (dot(a.start, n) + dot(a.end, n)) / 2, num: parseFloat(a.number) };
+    });
+    const front = median(info.map(i => i.s)), back = median(info.map(i => i.e));
+    const numbered = info.filter(i => Number.isFinite(i.num));
+    let fit = null;
+    if (numbered.length >= 2) {
+      const mx = numbered.reduce((t, i) => t + i.num, 0) / numbered.length;
+      const my = numbered.reduce((t, i) => t + i.p, 0) / numbered.length;
+      let sxy = 0, sxx = 0;
+      for (const i of numbered) { sxy += (i.num - mx) * (i.p - my); sxx += (i.num - mx) ** 2; }
+      if (sxx > 0) fit = { b: sxy / sxx, a: my - (sxy / sxx) * mx };
+    }
+    const pitch = fit ? Math.abs(fit.b) : null;
+    const width = pitch ? Math.max(MIN_WALKWAY, Math.min(AISLE_WIDTH, pitch - 2 * SHELF - 0.1)) : null;
+    const place = (base, p, s, e, flip) => {
+      const A = [u[0] * s + n[0] * p, u[1] * s + n[1] * p], B = [u[0] * e + n[0] * p, u[1] * e + n[1] * p];
+      const len = Math.abs(e - s);
+      return { ...base, start: flip ? B : A, end: flip ? A : B, width: width ?? base.width, bays: Math.max(1, Math.round(len / BAY_WIDTH)) };
+    };
+    for (const i of info) {
+      const p = o.even && fit && Number.isFinite(i.num) ? fit.a + fit.b * i.num : i.p;
+      out.push(place(i.a, p, o.lineUp ? front : i.s, o.lineUp ? back : i.e, i.flip));
+    }
+    if (o.fill && fit) {
+      const have = new Set(numbered.map(i => i.num));
+      const lo = Math.min(...have), hi = Math.max(...have);
+      for (let k = Math.ceil(lo); k <= hi; k++) {
+        if (have.has(k)) continue;
+        out.push(place({ ...numbered[0].a, number: String(k) }, fit.a + fit.b * k, front, back, numbered[0].flip));
+        filled.push(String(k));
+      }
+    }
+  }
+  out.sort((x, y) => (parseFloat(x.number) || 0) - (parseFloat(y.number) || 0));
+  return { aisles: out, filled };
+}
+
+// Zones from department marks, with fallbacks for unmarked ones
+export function zonesFrom(marks, at) {
+  const byLabel = new Map();
+  for (const m of marks.filter(x => x.type === 'zone')) {
+    const info = m.match ? { label: m.label, match: m.match, cold: !!m.cold, bays: m.bays || 0, base: m.base || null } : sectionInfo(m.label, m.number);
+    if (!byLabel.has(info.label)) byLabel.set(info.label, { ...info, picks: [] });
+    byLabel.get(info.label).picks.push(at(m));
+  }
+  const zones = [...byLabel.values()];
+  const marked = name => zones.find(z => z.base === name && z.label === name) || zones.find(z => z.base === name);
+  // Marked zone that takes a department's items
+  const homeOf = (name, seen = new Set()) => {
+    if (seen.has(name)) return null;
+    seen.add(name);
+    const own = marked(name);
+    if (own) return own;
+    const d = DEPARTMENTS.find(x => x.name === name);
+    return (d?.parent && homeOf(d.parent, seen)) || zones.find(z => DEPARTMENTS.find(c => c.name === z.base)?.parent === name) || null;
+  };
+  for (const d of DEPARTMENTS) {
+    if (marked(d.name) || !d.match.length) continue;
+    const home = homeOf(d.name);
+    if (home) home.match = [...new Set([...home.match, ...d.match])];
+  }
+  return zones.map(z => {
+    const b = bounds(z.picks);
+    const polygon = [[b.x0 - ZONE_PAD, b.y0 - ZONE_PAD], [b.x1 + ZONE_PAD, b.y0 - ZONE_PAD], [b.x1 + ZONE_PAD, b.y1 + ZONE_PAD], [b.x0 - ZONE_PAD, b.y1 + ZONE_PAD]];
+    return { name: z.label, match: z.match, cold: z.cold, bays: z.bays, polygon, picks: z.picks };
+  });
+}
 
 // Turn a recorded walk into a store layout
-export function buildLayout(walk) {
+export function buildLayout(walk, opts = ARRANGE) {
   const raw = positions(walk);
-  const notes = [];
-  const report = { steps: walk.steps.length, closure: null, perimeter: 0, aisles: 0, registers: 0, warnings: [] };
+  const report = { steps: walk.steps.length, closure: null, perimeter: 0, aisles: 0, filled: [], registers: 0, warnings: [] };
   const endMark = walk.marks.find(m => m.type === 'perimeter-end');
   let pts = raw;
   let outline = [];
@@ -126,7 +225,8 @@ export function buildLayout(walk) {
     pts = closeLoop(raw, endMark.step, target);
     const loop = pts.slice(0, endMark.step + 1);
     for (let i = 1; i < loop.length; i++) report.perimeter += Math.hypot(loop[i][0] - loop[i - 1][0], loop[i][1] - loop[i - 1][1]);
-    outline = tidy(offsetOutline(tidy(simplify(loop, SIMPLIFY)), WALL_GAP));
+    const corners = walk.marks.filter(m => m.type === 'corner' && m.step <= endMark.step).map(m => m.step);
+    outline = tidy(offsetOutline(tidy(simplify(loop, SIMPLIFY, corners)), WALL_GAP));
     if (outline.length < 3) report.warnings.push('The perimeter walk is too short to make an outline.');
   } else {
     report.warnings.push('No finished perimeter walk yet.');
@@ -136,7 +236,7 @@ export function buildLayout(walk) {
   const registers = walk.marks.filter(m => m.type === 'register').map(at);
   report.registers = registers.length;
 
-  const aisles = [];
+  const walked = [];
   let open = null;
   for (const m of walk.marks) {
     if (m.type === 'aisle-start') open = m;
@@ -144,24 +244,16 @@ export function buildLayout(walk) {
       const start = at(open), end = at(m);
       const len = Math.hypot(end[0] - start[0], end[1] - start[1]);
       if (len < 1) report.warnings.push(`Aisle ${open.number} was shorter than 1 m, so it was left out.`);
-      else aisles.push({ number: String(open.number), start, end, width: AISLE_WIDTH, shelf: 0.6, bays: Math.max(1, Math.round(len / BAY_WIDTH)), bay1: 'start', flip: false, cold: false });
+      else walked.push({ number: String(open.number), start, end, width: AISLE_WIDTH, shelf: SHELF, bays: Math.max(1, Math.round(len / BAY_WIDTH)), bay1: 'start', flip: false, cold: false });
       open = null;
     }
   }
-  report.aisles = aisles.length;
+  const { aisles, filled } = arrangeAisles(walked, walk.rows || 1, opts);
+  report.aisles = walked.length;
+  report.filled = filled;
 
-  const zoneMarks = new Map();
-  for (const m of walk.marks.filter(x => x.type === 'zone')) {
-    if (!zoneMarks.has(m.label)) zoneMarks.set(m.label, []);
-    zoneMarks.get(m.label).push(at(m));
-  }
-  const zones = [...zoneMarks.entries()].map(([name, picks]) => {
-    const b = bounds(picks);
-    const d = DEPARTMENTS[name] || { match: [name.toUpperCase()], cold: false, bays: 0 };
-    const polygon = [[b.x0 - ZONE_PAD, b.y0 - ZONE_PAD], [b.x1 + ZONE_PAD, b.y0 - ZONE_PAD], [b.x1 + ZONE_PAD, b.y1 + ZONE_PAD], [b.x0 - ZONE_PAD, b.y1 + ZONE_PAD]];
-    return { name, match: d.match, cold: d.cold, bays: d.bays, polygon, picks };
-  });
-  for (const m of walk.marks.filter(x => x.type === 'note')) notes.push({ label: m.label, point: at(m) });
+  const zones = zonesFrom(walk.marks, at);
+  const notes = walk.marks.filter(x => x.type === 'note').map(m => ({ label: m.label, point: at(m) }));
 
   // Shift so the store sits at positive coordinates
   const all = [...outline, [0, 0], ...registers, ...aisles.flatMap(a => [a.start, a.end]), ...zones.flatMap(z => z.polygon)];

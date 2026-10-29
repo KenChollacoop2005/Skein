@@ -1,6 +1,7 @@
 import { load, save, remove, registerWorker } from './storage.js';
 import { StepDetector, HeadingFilter, TurnSnapper, readHeading, angleDiff, norm360, stepFromHeight } from './sensors.js';
-import { newWalk, positions, markAt, buildLayout, DEPARTMENTS } from './trace.js';
+import { newWalk, positions, markAt, buildLayout, snapStep, ARRANGE } from './trace.js';
+import { DEPARTMENTS, GROUPS, sectionInfo } from './departments.js';
 import { validateLayout, checkReachable, buildGrid, bounds } from './store.js';
 import { drawStore, el, pathD } from './map-svg.js';
 
@@ -23,7 +24,7 @@ let motionSeen = false;
 let wakeLock = null;
 const detector = new StepDetector();
 const filter = new HeadingFilter();
-const snapper = new TurnSnapper();
+let snapper = new TurnSnapper();
 let drawQueued = false;
 
 function init() {
@@ -35,14 +36,35 @@ function init() {
   bindPrep();
   bindWalking();
   bindFinish();
-  for (const name of Object.keys(DEPARTMENTS)) {
-    const b = document.createElement('button');
-    b.className = 'chip';
-    b.textContent = name;
-    b.addEventListener('click', () => addMark('zone', { label: name }, `${name} marked.`));
-    $('dept-marks').appendChild(b);
+  for (const group of GROUPS) {
+    const h = document.createElement('p');
+    h.className = 'small muted dept-group';
+    h.textContent = group;
+    const box = document.createElement('div');
+    box.className = 'chips';
+    for (const d of DEPARTMENTS.filter(x => x.group === group)) {
+      const b = document.createElement('button');
+      b.className = 'chip';
+      b.textContent = d.name;
+      b.addEventListener('click', () => markDepartment(d.name));
+      box.appendChild(b);
+    }
+    $('dept-marks').append(h, box);
   }
   show();
+}
+
+function markDepartment(name) {
+  const num = $('section-num').value.trim();
+  const info = sectionInfo(name, num);
+  addMark('zone', { label: info.label, match: info.match, cold: info.cold, bays: info.bays, base: info.base, number: num || undefined }, `${info.label} marked.`);
+  $('section-num').value = '';
+}
+
+function makeSnapper() {
+  const step = snapStep(walk);
+  snapper = new TurnSnapper({ step: step || 90, hold: (step || 90) * 2 / 3 });
+  snapper.current = lastHeading();
 }
 
 // Phases
@@ -57,7 +79,7 @@ function show() {
     if (phase !== 'prep') walk.phase = phase;
     persist();
     if (phase === 'finish') renderFinish();
-    else if (phase !== 'prep') { snapper.current = lastHeading(); syncAisle(); queueDraw(); }
+    else if (phase !== 'prep') { makeSnapper(); syncAisle(); queueDraw(); }
   }
   updateWakeLock();
 }
@@ -129,7 +151,7 @@ const walking = () => walk && !paused && ['perimeter', 'checkout', 'aisles'].inc
 function currentDirection() {
   if ($('manual').checked || heading == null || walk.startHeading == null) return { h: manualHeading, raw: manualHeading };
   const rel = norm360(angleDiff(heading, walk.startHeading));
-  return { h: walk.snap ? snapper.update(rel) : rel, raw: rel };
+  return { h: snapStep(walk) ? snapper.update(rel) : rel, raw: rel };
 }
 
 function addStep() {
@@ -245,7 +267,12 @@ function undoAisle() {
 let built = null;
 
 function renderFinish() {
-  built = buildLayout(walk);
+  const arrange = { ...ARRANGE, ...(walk.arrange || {}) };
+  $('finish-rows').value = String(walk.rows || 1);
+  $('opt-lineup').checked = arrange.lineUp;
+  $('opt-even').checked = arrange.even;
+  $('opt-fill').checked = arrange.fill;
+  built = buildLayout(walk, arrange);
   const { layout, report, notes, path } = built;
   const svg = $('finish-map');
   if (layout.outline.length > 2) {
@@ -260,7 +287,8 @@ function renderFinish() {
   }
   const parts = [`${report.steps} steps, about ${Math.round(report.steps * walk.stepLength)} m.`];
   if (report.closure != null) parts.push(`The loop is ${Math.round(report.perimeter)} m around and ended ${report.closure.toFixed(1)} m from the exit, so that gap was spread over the walk.`);
-  parts.push(`${report.aisles} aisle${report.aisles === 1 ? '' : 's'}, ${report.registers} checkout spot${report.registers === 1 ? '' : 's'}, ${layout.zones.length} department${layout.zones.length === 1 ? '' : 's'}.`);
+  if (report.filled.length) parts.push(`Filled in aisle${report.filled.length === 1 ? '' : 's'} ${report.filled.join(', ')} between ones you walked.`);
+  parts.push(`${report.aisles} aisle${report.aisles === 1 ? '' : 's'} walked, ${report.registers} checkout spot${report.registers === 1 ? '' : 's'}, ${layout.zones.length} department${layout.zones.length === 1 ? '' : 's'}.`);
   $('finish-report').textContent = parts.join(' ');
   const list = $('finish-problems');
   list.replaceChildren();
@@ -286,6 +314,7 @@ function renderFinish() {
     list.appendChild(li);
   }
   $('save-layout').disabled = layout.outline.length < 3;
+  $('save-layout').textContent = 'Use this map in Skein';
 }
 
 function download(name, data) {
@@ -346,10 +375,10 @@ function bindPrep() {
     if (walk && walk.steps.length && !confirm('Start over? Your saved walk will be replaced.')) return;
     if (!$('manual').checked) askSensors();
     const len = Number($('step-len').value);
-    walk = newWalk(len >= 0.3 && len <= 1.2 ? len : DEFAULT_STEP, $('snap').checked);
+    walk = newWalk(len >= 0.3 && len <= 1.2 ? len : DEFAULT_STEP, Number($('snap').value), Number($('rows').value));
     walk.startHeading = $('manual').checked ? null : heading;
     manualHeading = 0;
-    snapper.current = 0;
+    makeSnapper();
     paused = false;
     setPhase('perimeter');
   });
@@ -383,6 +412,15 @@ function bindWalking() {
     markAt(walk, 'perimeter-end');
     setPhase('checkout');
   });
+  $('corner-btn').addEventListener('click', () => addMark('corner', {}, 'Corner marked.'));
+  $('custom-btn').addEventListener('click', () => {
+    const name = $('custom-name').value.trim();
+    if (!name) { $('mark-status').textContent = 'Type a name for the area first.'; return; }
+    const words = $('custom-words').value.split(',').map(w => w.trim().toUpperCase()).filter(Boolean);
+    addMark('zone', { label: name, match: words.length ? words : [name.toUpperCase()], cold: false, bays: 0, base: null }, `${name} marked.`);
+    $('custom-name').value = '';
+    $('custom-words').value = '';
+  });
   $('mark-register').addEventListener('click', () => addMark('register', {}, 'Checkout spot marked.'));
   $('checkout-done').addEventListener('click', () => setPhase('aisles'));
   $('aisle-btn').addEventListener('click', aisleButton);
@@ -401,6 +439,13 @@ function bindWalking() {
 }
 
 function bindFinish() {
+  const rearrange = () => {
+    walk.rows = Number($('finish-rows').value);
+    walk.arrange = { lineUp: $('opt-lineup').checked, even: $('opt-even').checked, fill: $('opt-fill').checked };
+    persist();
+    renderFinish();
+  };
+  for (const id of ['finish-rows', 'opt-lineup', 'opt-even', 'opt-fill']) $(id).addEventListener('change', rearrange);
   $('save-layout').addEventListener('click', () => {
     if (!built) return;
     if (load('layout') && !confirm('Replace the map Skein uses now with this traced one?')) return;

@@ -311,3 +311,4 @@ dialog.sheet::backdrop { background: rgba(36, 34, 31, 0.35); }
 .setup .map-box svg { max-height: 52vh; }
 .setup-controls { margin-top: 10px; }
 .aisle-num { width: 6em; }
+.dept-group { margin: 10px 0 0; }
