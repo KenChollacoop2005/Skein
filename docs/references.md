@@ -1,0 +1,21 @@
+# References
+
+- Kroger Developers, Authorization (OAuth2 client credentials, scope product.compact): https://developer.kroger.com/reference/api/authorization-endpoints-public
+- Kroger Developers, Products API (filter.term, filter.locationId, aisleLocations): https://developer.kroger.com/reference/api/product-api-public
+- Kroger Developers, Locations API (filter.zipCode.near, departments): https://developer.kroger.com/reference/api/location-api-public
+- Kroger Products API example with a full aisleLocations entry (third party mirror): https://www.val.town/x/bgschiller/personalShopper/code/docs/kroger-products.md
+- Held, M. and Karp, R. M. (1962). A dynamic programming approach to sequencing problems. J. SIAM 10(1), 196 to 210.
+- Croes, G. A. (1958). A method for solving traveling salesman problems. Operations Research 6(6), 791 to 812. (2-opt)
+- Or, I. (1976). Traveling salesman type combinatorial problems and their relation to the logistics of regional blood banking. PhD thesis, Northwestern University. (Or-opt)
+- Lin, S. and Kernighan, B. W. (1973). An effective heuristic algorithm for the traveling salesman problem. Operations Research 21(2), 498 to 516.
+- Prim, R. C. (1957). Shortest connection networks and some generalizations. Bell System Technical Journal 36(6). (MST lower bound)
+- Tero, A., Kobayashi, R. and Nakagaki, T. (2007). A mathematical model for adaptive transport network in path finding by true slime mold. J. Theor. Biol. 244(4), 553 to 564.
+- Tero, A. et al. (2010). Rules for biologically inspired adaptive network design. Science 327(5964), 439 to 442.
+- Jones, J. (2010). Characteristics of pattern formation and evolution in approximations of Physarum transport networks. Artificial Life 16(2), 127 to 153.
+- Hart, P. E., Nilsson, N. J. and Raphael, B. (1968). A formal basis for the heuristic determination of minimum cost paths. IEEE Trans. SSC 4(2). (A*)
+- Dijkstra, E. W. (1959). A note on two problems in connexion with graphs. Numerische Mathematik 1, 269 to 271.
+- Braille Institute, Atkinson Hyperlegible typeface: https://www.brailleinstitute.org/freefont/
+- Google Fonts, Atkinson Hyperlegible and Fraunces (SIL Open Font License 1.1): https://fonts.google.com/
+- W3C, WCAG 2.1 contrast ratio definition (1.4.3): https://www.w3.org/TR/WCAG21/#contrast-minimum
+- MDN, Service Worker API and Cache API: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+- Web.dev, Web app manifest: https://web.dev/articles/add-manifest

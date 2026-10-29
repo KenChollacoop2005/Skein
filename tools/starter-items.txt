@@ -1,0 +1,340 @@
+# Produce
+bananas
+apples
+oranges
+lemons
+limes
+grapes
+strawberries
+blueberries
+raspberries
+avocados
+tomatoes
+potatoes
+sweet potatoes
+onions
+garlic
+carrots
+celery
+broccoli
+cauliflower
+spinach
+lettuce
+salad mix
+cucumbers
+bell peppers
+jalapenos
+mushrooms
+zucchini
+green onions
+cilantro
+ginger
+watermelon
+pineapple
+peaches
+pears
+corn on the cob
+green beans
+cabbage
+kale
+# Bakery
+bagels
+croissants
+muffins
+donuts
+french bread
+birthday cake
+dinner rolls
+pie
+# Deli
+sliced turkey
+sliced ham
+deli cheese
+rotisserie chicken
+potato salad
+hummus
+salami
+sushi
+fried chicken
+pasta salad
+# Meat and Seafood
+ground beef
+chicken breast
+chicken thighs
+chicken wings
+pork chops
+bacon
+sausage
+steak
+ground turkey
+hot dogs
+salmon
+shrimp
+tilapia
+beef roast
+pork tenderloin
+ribs
+# Dairy
+milk
+eggs
+butter
+cheddar cheese
+shredded cheese
+mozzarella
+cream cheese
+sour cream
+yogurt
+greek yogurt
+cottage cheese
+heavy cream
+half and half
+coffee creamer
+almond milk
+oat milk
+orange juice
+string cheese
+biscuit dough
+whipped cream
+parmesan
+sliced cheese
+# Frozen
+frozen pizza
+ice cream
+frozen vegetables
+frozen peas
+frozen corn
+frozen berries
+frozen waffles
+frozen burritos
+frozen meals
+chicken nuggets
+french fries
+tater tots
+fish sticks
+popsicles
+frozen breakfast sandwiches
+bagged ice
+frozen dumplings
+frozen shrimp
+pie crust
+frozen broccoli
+frozen lasagna
+whipped topping
+# Aisle 1: bread and spreads
+sandwich bread
+wheat bread
+hamburger buns
+hot dog buns
+english muffins
+peanut butter
+jelly
+honey
+hazelnut spread
+almond butter
+maple syrup
+pancake mix
+toaster pastries
+tortillas
+# Aisle 2: cereal and coffee
+cereal
+oatmeal
+granola
+granola bars
+coffee
+ground coffee
+coffee pods
+tea
+green tea
+hot cocoa
+breakfast bars
+protein bars
+cheerios
+frosted flakes
+grits
+cream of wheat
+# Aisle 3: canned goods and soup
+chicken noodle soup
+tomato soup
+broth
+chicken broth
+canned tuna
+canned chicken
+black beans
+kidney beans
+chickpeas
+refried beans
+canned corn
+canned green beans
+diced tomatoes
+tomato paste
+canned peaches
+applesauce
+chili
+canned pumpkin
+# Aisle 4: pasta, rice and international
+spaghetti
+penne
+macaroni and cheese
+rice
+brown rice
+pasta sauce
+alfredo sauce
+ramen
+egg noodles
+soy sauce
+taco shells
+salsa
+taco seasoning
+enchilada sauce
+coconut milk
+curry paste
+lasagna noodles
+quinoa
+# Aisle 5: baking and spices
+flour
+sugar
+brown sugar
+powdered sugar
+baking soda
+baking powder
+vanilla extract
+chocolate chips
+cake mix
+brownie mix
+frosting
+yeast
+cornstarch
+vegetable oil
+olive oil
+cooking spray
+salt
+black pepper
+cinnamon
+garlic powder
+paprika
+chili powder
+italian seasoning
+breadcrumbs
+marshmallows
+# Aisle 6: condiments
+ketchup
+mustard
+mayonnaise
+ranch dressing
+italian dressing
+bbq sauce
+hot sauce
+pickles
+relish
+vinegar
+apple cider vinegar
+worcestershire sauce
+olives
+steak sauce
+sriracha
+# Aisle 7: snacks
+potato chips
+tortilla chips
+pretzels
+popcorn
+crackers
+goldfish crackers
+cheez its
+cookies
+oreos
+graham crackers
+peanuts
+almonds
+trail mix
+rice cakes
+fruit snacks
+beef jerky
+pita chips
+cashews
+sunflower seeds
+animal crackers
+# Aisle 8: drinks
+water
+sparkling water
+soda
+coke
+diet coke
+sprite
+ginger ale
+apple juice
+cranberry juice
+lemonade
+sports drink
+gatorade
+energy drink
+iced tea
+coconut water
+drink mix
+# Aisle 9: paper and cleaning
+paper towels
+toilet paper
+napkins
+paper plates
+plastic cups
+trash bags
+aluminum foil
+plastic wrap
+zipper bags
+dish soap
+dishwasher detergent
+laundry detergent
+fabric softener
+bleach
+all purpose cleaner
+sponges
+light bulbs
+batteries
+tissues
+disinfecting wipes
+# Aisle 10: health and beauty
+toothpaste
+toothbrush
+mouthwash
+dental floss
+shampoo
+conditioner
+body wash
+bar soap
+deodorant
+lotion
+sunscreen
+razors
+shaving cream
+cotton swabs
+bandages
+ibuprofen
+acetaminophen
+allergy medicine
+cough drops
+vitamins
+# Aisle 11: baby and pet
+diapers
+baby wipes
+baby food
+baby formula
+dog food
+cat food
+cat litter
+dog treats
+cat treats
+# Aisle 12: candy, beer and wine
+candy
+chocolate bar
+gum
+mints
+beer
+wine
+hard seltzer
+gummy bears
+peanut butter cups
+licorice
+# Usually no aisle location
+gift card
+firewood
+propane
+magazine

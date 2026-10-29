@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skein: map editor</title>
+  <meta name="theme-color" content="#F3EEE4">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/skein.css">
+</head>
+<body>
+  <header class="top">
+    <a class="wordmark" href="./" aria-label="Skein home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 24V6h6v14h6V6h6v14h3" fill="none" stroke="#B23B2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Skein
+    </a>
+    <nav class="nav" aria-label="Pages">
+      <a href="./">Plan</a>
+      <a href="editor.html" aria-current="page">Editor</a>
+      <a href="race.html">Race</a>
+    </nav>
+  </header>
+  <div class="banner" id="layout-banner" hidden>Placeholder layout. Trace the real store here, then download store.json.</div>
+
+  <main class="wrap">
+    <div class="editor-grid">
+      <section>
+        <div class="toolbar" role="toolbar" aria-label="Editor tools" id="tools">
+          <button data-tool="select" aria-pressed="true">Select</button>
+          <button data-tool="outline">Outline</button>
+          <button data-tool="entrance">Entrance</button>
+          <button data-tool="register">Register</button>
+          <button data-tool="aisle">Aisle</button>
+          <button data-tool="zone">Zone</button>
+          <button data-tool="pick">Pick point</button>
+          <button data-tool="obstacle">Obstacle</button>
+        </div>
+        <div class="toolbar" aria-label="Editor actions">
+          <button id="done-btn" class="primary" hidden>Done</button>
+          <button id="undo-btn">Undo</button>
+          <button id="redo-btn">Redo</button>
+          <button id="delete-btn">Delete</button>
+          <button id="fit-btn">Fit</button>
+        </div>
+        <p class="small muted" id="hint" aria-live="polite"></p>
+        <div class="map-box editor-map">
+          <svg id="canvas" role="img" aria-label="Store map editor"></svg>
+        </div>
+        <ul class="problems small" id="problems" aria-live="polite"></ul>
+      </section>
+
+      <section>
+        <div class="panel" id="props-panel">
+          <h2>Selected</h2>
+          <div id="props"><p class="muted">Tap something on the map to edit it.</p></div>
+        </div>
+
+        <details class="panel">
+          <summary>Add a row of aisles</summary>
+          <form id="quick" class="stack">
+            <div class="row">
+              <div class="grow"><label for="q-count">How many</label><input type="text" id="q-count" value="6" inputmode="decimal"></div>
+              <div class="grow"><label for="q-first">First number</label><input type="text" id="q-first" value="1"></div>
+            </div>
+            <div class="row">
+              <div class="grow"><label for="q-x">First aisle center x</label><input type="text" id="q-x" value="10"></div>
+              <div class="grow"><label for="q-spacing">Spacing</label><input type="text" id="q-spacing" value="3.3"></div>
+            </div>
+            <div class="row">
+              <div class="grow"><label for="q-y0">Front y</label><input type="text" id="q-y0" value="35"></div>
+              <div class="grow"><label for="q-y1">Back y</label><input type="text" id="q-y1" value="8"></div>
+            </div>
+            <div class="row">
+              <div class="grow"><label for="q-width">Walkway width</label><input type="text" id="q-width" value="2.1"></div>
+              <div class="grow"><label for="q-bays">Bays</label><input type="text" id="q-bays" value="20" inputmode="numeric"></div>
+            </div>
+            <label class="check"><input type="checkbox" id="q-rtl"> Numbers go right to left</label>
+            <p class="muted small">Lengths are in meters, or type steps, like "40 steps". Aisles run front to back.</p>
+            <button type="submit" class="primary">Add aisles</button>
+          </form>
+        </details>
+
+        <details class="panel">
+          <summary>Pace it out</summary>
+          <div class="stack">
+            <div class="row">
+              <div class="grow"><label for="step-len">My step length (m)</label><input type="text" id="step-len" inputmode="decimal"></div>
+              <div class="grow"><label for="step-count">Steps</label><input type="text" id="step-count" inputmode="numeric" placeholder="0"></div>
+            </div>
+            <p id="step-out"><b>0 m</b></p>
+            <p class="muted small">To find your step length, walk 10 steps along floor tiles you can measure and divide by 10. Every length box in the editor also takes steps, like "25 steps".</p>
+          </div>
+        </details>
+
+        <details class="panel">
+          <summary>Save and share</summary>
+          <div class="stack">
+            <p class="muted small">Changes save on this phone as you go.</p>
+            <div class="row">
+              <button id="download-btn" class="primary">Download store.json</button>
+              <button id="export-btn">Export JSON</button>
+              <label class="btn" for="import-file">Import JSON</label>
+              <input type="file" id="import-file" accept="application/json,.json" hidden>
+            </div>
+            <textarea id="json-box" hidden aria-label="Layout JSON"></textarea>
+            <div class="row" id="json-actions" hidden>
+              <button id="copy-btn">Copy</button>
+              <button id="apply-btn">Load this text</button>
+            </div>
+            <label class="check"><input type="checkbox" id="placeholder-box"> Still a placeholder (shows the banner in the app)</label>
+            <button id="reset-btn">Start over from the shipped layout</button>
+          </div>
+        </details>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="js/editor.js"></script>
+</body>
+</html>

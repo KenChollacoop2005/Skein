@@ -1,0 +1,1021 @@
+{
+ "version": 1,
+ "name": "Kroger - University City",
+ "placeholder": true,
+ "units": "m",
+ "outline": [
+  [
+   0,
+   0
+  ],
+  [
+   60,
+   0
+  ],
+  [
+   60,
+   45
+  ],
+  [
+   0,
+   45
+  ]
+ ],
+ "entrance": [
+  11,
+  44
+ ],
+ "registers": [
+  [
+   19.75,
+   40
+  ],
+  [
+   24.25,
+   40
+  ],
+  [
+   28.75,
+   40
+  ],
+  [
+   33.25,
+   40
+  ],
+  [
+   37.75,
+   40
+  ],
+  [
+   42.25,
+   40
+  ]
+ ],
+ "aisles": [
+  {
+   "number": "1",
+   "start": [
+    10.65,
+    19.0
+   ],
+   "end": [
+    10.65,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "2",
+   "start": [
+    13.95,
+    19.0
+   ],
+   "end": [
+    13.95,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "3",
+   "start": [
+    17.25,
+    19.0
+   ],
+   "end": [
+    17.25,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "4",
+   "start": [
+    20.55,
+    19.0
+   ],
+   "end": [
+    20.55,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "5",
+   "start": [
+    23.85,
+    19.0
+   ],
+   "end": [
+    23.85,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "6",
+   "start": [
+    27.15,
+    19.0
+   ],
+   "end": [
+    27.15,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "7",
+   "start": [
+    30.45,
+    19.0
+   ],
+   "end": [
+    30.45,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "8",
+   "start": [
+    33.75,
+    19.0
+   ],
+   "end": [
+    33.75,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "9",
+   "start": [
+    37.05,
+    19.0
+   ],
+   "end": [
+    37.05,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "10",
+   "start": [
+    40.35,
+    19.0
+   ],
+   "end": [
+    40.35,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "11",
+   "start": [
+    43.65,
+    19.0
+   ],
+   "end": [
+    43.65,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "12",
+   "start": [
+    46.95,
+    19.0
+   ],
+   "end": [
+    46.95,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "13",
+   "start": [
+    50.25,
+    19.0
+   ],
+   "end": [
+    50.25,
+    6.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "14",
+   "start": [
+    10.65,
+    35.0
+   ],
+   "end": [
+    10.65,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "15",
+   "start": [
+    13.95,
+    35.0
+   ],
+   "end": [
+    13.95,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "16",
+   "start": [
+    17.25,
+    35.0
+   ],
+   "end": [
+    17.25,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "17",
+   "start": [
+    20.55,
+    35.0
+   ],
+   "end": [
+    20.55,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "18",
+   "start": [
+    23.85,
+    35.0
+   ],
+   "end": [
+    23.85,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "19",
+   "start": [
+    27.15,
+    35.0
+   ],
+   "end": [
+    27.15,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "20",
+   "start": [
+    30.45,
+    35.0
+   ],
+   "end": [
+    30.45,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "21",
+   "start": [
+    33.75,
+    35.0
+   ],
+   "end": [
+    33.75,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "22",
+   "start": [
+    37.05,
+    35.0
+   ],
+   "end": [
+    37.05,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "23",
+   "start": [
+    40.35,
+    35.0
+   ],
+   "end": [
+    40.35,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "24",
+   "start": [
+    43.65,
+    35.0
+   ],
+   "end": [
+    43.65,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  },
+  {
+   "number": "25",
+   "start": [
+    46.95,
+    35.0
+   ],
+   "end": [
+    46.95,
+    22.0
+   ],
+   "width": 2.1,
+   "shelf": 0.6,
+   "bays": 22,
+   "bay1": "start",
+   "flip": false
+  }
+ ],
+ "zones": [
+  {
+   "name": "Produce",
+   "match": [
+    "PRODUCE",
+    "FRUIT",
+    "VEGETABLES"
+   ],
+   "cold": false,
+   "bays": 25,
+   "polygon": [
+    [
+     0,
+     6
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     34
+    ],
+    [
+     0,
+     34
+    ]
+   ],
+   "picks": [
+    [
+     7.0,
+     33.0
+    ],
+    [
+     7.0,
+     28.0
+    ],
+    [
+     7.0,
+     23.0
+    ],
+    [
+     7.0,
+     18.0
+    ],
+    [
+     7.0,
+     13.0
+    ],
+    [
+     7.0,
+     8.0
+    ]
+   ]
+  },
+  {
+   "name": "Bakery",
+   "match": [
+    "BAKERY"
+   ],
+   "cold": false,
+   "bays": 6,
+   "polygon": [
+    [
+     0,
+     34
+    ],
+    [
+     8,
+     34
+    ],
+    [
+     8,
+     40
+    ],
+    [
+     0,
+     40
+    ]
+   ],
+   "picks": [
+    [
+     7,
+     37
+    ]
+   ]
+  },
+  {
+   "name": "Deli",
+   "match": [
+    "DELI"
+   ],
+   "cold": true,
+   "bays": 12,
+   "polygon": [
+    [
+     0,
+     0
+    ],
+    [
+     14,
+     0
+    ],
+    [
+     14,
+     3
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "picks": [
+    [
+     3.0,
+     3.8
+    ],
+    [
+     7.5,
+     3.8
+    ],
+    [
+     12.0,
+     3.8
+    ]
+   ]
+  },
+  {
+   "name": "Meat",
+   "match": [
+    "MEAT"
+   ],
+   "cold": true,
+   "bays": 40,
+   "polygon": [
+    [
+     14,
+     0
+    ],
+    [
+     44,
+     0
+    ],
+    [
+     44,
+     3
+    ],
+    [
+     14,
+     3
+    ]
+   ],
+   "picks": [
+    [
+     16.0,
+     3.8
+    ],
+    [
+     21.2,
+     3.8
+    ],
+    [
+     26.4,
+     3.8
+    ],
+    [
+     31.6,
+     3.8
+    ],
+    [
+     36.8,
+     3.8
+    ],
+    [
+     42.0,
+     3.8
+    ]
+   ]
+  },
+  {
+   "name": "Seafood",
+   "match": [
+    "SEAFOOD"
+   ],
+   "cold": true,
+   "bays": 10,
+   "polygon": [
+    [
+     44,
+     0
+    ],
+    [
+     56,
+     0
+    ],
+    [
+     56,
+     3
+    ],
+    [
+     44,
+     3
+    ]
+   ],
+   "picks": [
+    [
+     46.0,
+     3.8
+    ],
+    [
+     54.0,
+     3.8
+    ]
+   ]
+  },
+  {
+   "name": "Dairy",
+   "match": [
+    "DAIRY"
+   ],
+   "cold": true,
+   "bays": 40,
+   "polygon": [
+    [
+     57,
+     3
+    ],
+    [
+     60,
+     3
+    ],
+    [
+     60,
+     37
+    ],
+    [
+     57,
+     37
+    ]
+   ],
+   "picks": [
+    [
+     56.2,
+     5.0
+    ],
+    [
+     56.2,
+     11.0
+    ],
+    [
+     56.2,
+     17.0
+    ],
+    [
+     56.2,
+     23.0
+    ],
+    [
+     56.2,
+     29.0
+    ],
+    [
+     56.2,
+     35.0
+    ]
+   ]
+  },
+  {
+   "name": "Pharmacy",
+   "match": [
+    "PHARMACY"
+   ],
+   "cold": false,
+   "bays": 4,
+   "polygon": [
+    [
+     56,
+     38
+    ],
+    [
+     60,
+     38
+    ],
+    [
+     60,
+     45
+    ],
+    [
+     56,
+     45
+    ]
+   ],
+   "picks": [
+    [
+     55.2,
+     41
+    ]
+   ]
+  },
+  {
+   "name": "Checklanes",
+   "match": [
+    "CHECKLANE"
+   ],
+   "cold": false,
+   "bays": 12,
+   "polygon": [
+    [
+     16,
+     38
+    ],
+    [
+     42,
+     38
+    ],
+    [
+     42,
+     43
+    ],
+    [
+     16,
+     43
+    ]
+   ],
+   "picks": [
+    [
+     29,
+     37.2
+    ]
+   ]
+  }
+ ],
+ "obstacles": [
+  {
+   "name": "Produce table",
+   "polygon": [
+    [
+     2,
+     10
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     5,
+     14
+    ],
+    [
+     2,
+     14
+    ]
+   ]
+  },
+  {
+   "name": "Produce table",
+   "polygon": [
+    [
+     2,
+     18
+    ],
+    [
+     5,
+     18
+    ],
+    [
+     5,
+     22
+    ],
+    [
+     2,
+     22
+    ]
+   ]
+  },
+  {
+   "name": "Produce table",
+   "polygon": [
+    [
+     2,
+     26
+    ],
+    [
+     5,
+     26
+    ],
+    [
+     5,
+     30
+    ],
+    [
+     2,
+     30
+    ]
+   ]
+  },
+  {
+   "name": "Service desk",
+   "polygon": [
+    [
+     46,
+     39
+    ],
+    [
+     52,
+     39
+    ],
+    [
+     52,
+     43
+    ],
+    [
+     46,
+     43
+    ]
+   ]
+  },
+  {
+   "name": "Seasonal display",
+   "polygon": [
+    [
+     48.9,
+     24
+    ],
+    [
+     51.3,
+     24
+    ],
+    [
+     51.3,
+     33
+    ],
+    [
+     48.9,
+     33
+    ]
+   ]
+  },
+  {
+   "name": "Register counter",
+   "polygon": [
+    [
+     18,
+     38.5
+    ],
+    [
+     19.0,
+     38.5
+    ],
+    [
+     19.0,
+     41.5
+    ],
+    [
+     18,
+     41.5
+    ]
+   ]
+  },
+  {
+   "name": "Register counter",
+   "polygon": [
+    [
+     22.5,
+     38.5
+    ],
+    [
+     23.5,
+     38.5
+    ],
+    [
+     23.5,
+     41.5
+    ],
+    [
+     22.5,
+     41.5
+    ]
+   ]
+  },
+  {
+   "name": "Register counter",
+   "polygon": [
+    [
+     27,
+     38.5
+    ],
+    [
+     28.0,
+     38.5
+    ],
+    [
+     28.0,
+     41.5
+    ],
+    [
+     27,
+     41.5
+    ]
+   ]
+  },
+  {
+   "name": "Register counter",
+   "polygon": [
+    [
+     31.5,
+     38.5
+    ],
+    [
+     32.5,
+     38.5
+    ],
+    [
+     32.5,
+     41.5
+    ],
+    [
+     31.5,
+     41.5
+    ]
+   ]
+  },
+  {
+   "name": "Register counter",
+   "polygon": [
+    [
+     36,
+     38.5
+    ],
+    [
+     37.0,
+     38.5
+    ],
+    [
+     37.0,
+     41.5
+    ],
+    [
+     36,
+     41.5
+    ]
+   ]
+  },
+  {
+   "name": "Register counter",
+   "polygon": [
+    [
+     40.5,
+     38.5
+    ],
+    [
+     41.5,
+     38.5
+    ],
+    [
+     41.5,
+     41.5
+    ],
+    [
+     40.5,
+     41.5
+    ]
+   ]
+  }
+ ]
+}
