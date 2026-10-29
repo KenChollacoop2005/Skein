@@ -16,6 +16,8 @@ I'm disabled, and every extra lap of the store costs me more than it costs most 
 
 **Store model.** The layout is a JSON file in meters: the outline, entrance, registers, numbered aisles with bay counts, wall departments like Dairy and Meat, and obstacles. Skein turns it into a 0.5 m walking grid with a little clearance from the shelves, and uses Dijkstra's algorithm to get true walking distances between every pair of stops. The shipped layout is a placeholder until I trace the real store with the built-in editor on my phone.
 
+**Setup walk.** To trace the real store, the Setup page counts steps from the phone's motion sensor (peaks in acceleration) and reads the compass while I walk the outside loop, mark the self checkout, and walk each aisle. Turns snap to right angles, because steel shelving throws the compass off, and the gap at the end of the loop is spread back over the walk. The result is a store map that can be fine tuned in the editor, and the raw walk can be downloaded and reprocessed later.
+
 **Routing.** Start at the entrance, visit every stop, end at whichever register makes the trip shortest. Up to 16 stops, Skein uses Held and Karp dynamic programming, which finds the exact shortest order. Above 16 it uses nearest neighbor plus 2-opt and Or-opt with restarts, and a Lagrangian spanning tree bound to say how close it is to the best possible. There are options to leave cold items for last and to make fewer turns into aisles.
 
 **The race.** The race page compares the planners with two slime mold models. The Tero, Kobayashi and Nakagaki tube model grows a network between the items, and the route walks that network. The Jones agent model is shown as an animation.
@@ -77,6 +79,7 @@ The item list is `tools/starter-items.txt`. Calls are paced 350 ms apart and cap
 
 ```
 index.html          list, route, map
+setup.html          trace the store by walking it
 editor.html         store map editor
 race.html           slime mold versus the planners
 js/store.js         layout model, validation, walk grid
@@ -85,6 +88,8 @@ js/route.js         Held and Karp, heuristics, lower bound
 js/match.js         list text to catalog items
 js/plan.js          glue between the list, map and solver
 js/physarum.js      Tero and Jones slime mold models
+js/sensors.js       step detection and compass heading
+js/trace.js         walk to store layout
 data/store.json     placeholder layout
 data/catalog.json   item locations for store 02900210
 tools/              Kroger scripts, QA screenshots, race table
