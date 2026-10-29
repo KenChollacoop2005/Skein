@@ -1,0 +1,4424 @@
+{
+ "sample": false,
+ "built": "2026-10-29",
+ "store": {
+  "locationId": "02900210",
+  "name": "Kroger - University City",
+  "address": "903 University City Blvd, Blacksburg, VA"
+ },
+ "items": [
+  {
+   "term": "bananas",
+   "id": "0000000004011",
+   "name": "Fresh Bunch of Bananas - 5-7 Bananas",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "FRUIT"
+   }
+  },
+  {
+   "term": "apples",
+   "id": "0001111070110",
+   "name": "Kroger Honeycrisp Apples - 4 Pack Tray",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "PRODUCE"
+   }
+  },
+  {
+   "term": "oranges",
+   "id": "0086039900191",
+   "name": "Dracula Citrus Blood Oranges",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "0",
+    "description": "FRUIT"
+   }
+  },
+  {
+   "term": "lemons",
+   "id": "0007224076189",
+   "name": "Wonderful Seedless Lemons",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "FRUIT"
+   }
+  },
+  {
+   "term": "limes",
+   "id": "0000000004048",
+   "name": "Fresh Large Limes - Each",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "353",
+    "description": "PRODUCE TABLE 4",
+    "bay": "1",
+    "side": "L",
+    "shelf": "19"
+   }
+  },
+  {
+   "term": "grapes",
+   "id": "0001111069795",
+   "name": "Private Selection AutumnCrisp Seedless Green Grapes",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "0",
+    "description": "PRODUCE"
+   }
+  },
+  {
+   "term": "strawberries",
+   "id": "0003338320027",
+   "name": "Fresh Strawberries - 1 LB Clamshell",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "351",
+    "description": "PRODUCE TABLE 2",
+    "bay": "2",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "blueberries",
+   "id": "0001111003931",
+   "name": "Private Selection Fresh Colossal Blueberries",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "351",
+    "description": "PRODUCE TABLE 2",
+    "bay": "4",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "raspberries",
+   "id": "0004154860810",
+   "name": "Outshine No Sugar Added Strawberry, Tangerine, and Raspberry Frozen Fruit Pops, 12 Count",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "3",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "avocados",
+   "id": "0076101048124",
+   "name": "Mission Fresh Jumbo Avocado Bag",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "FRUIT"
+   }
+  },
+  {
+   "term": "tomatoes",
+   "id": "0075166641725",
+   "name": "NatureSweet Constellation Dia De Muertos Seasonal Medley Tomatoes, 10oz",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "VEGETABLES"
+   }
+  },
+  {
+   "term": "potatoes",
+   "id": "0001111069177",
+   "name": "Kroger Freshly Prepared Sliced Potatoes",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "7",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "sweet potatoes",
+   "id": "0000000004816",
+   "name": "Sweet Potato",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "355",
+    "description": "PRODUCE TABLE 6",
+    "bay": "1",
+    "side": "L",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "onions",
+   "id": "0001111060170",
+   "name": "Private Selection Peruvian Gold Sweet Onion 3 lb Bag",
+   "desc": "International",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "VEGETABLES"
+   }
+  },
+  {
+   "term": "garlic",
+   "id": "0000000004608",
+   "name": "Garlic",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "354",
+    "description": "PRODUCE TABLE 5",
+    "bay": "1",
+    "side": "L",
+    "shelf": "10"
+   }
+  },
+  {
+   "term": "carrots",
+   "id": "0007878398506",
+   "name": "Souper Carrots 12 Oz Grimmway Farms",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "9",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "celery",
+   "id": "0001111060376",
+   "name": "Private Selection Long Celery Sticks",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "20",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "broccoli",
+   "id": "0085007650309",
+   "name": "Broccoli Crowns Tray",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "24",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "cauliflower",
+   "id": "0000000004079",
+   "name": "Cauliflower",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "0",
+    "description": "PRODUCE"
+   }
+  },
+  {
+   "term": "spinach",
+   "id": "0001111091649",
+   "name": "Kroger Tender Baby Spinach Bag Salad",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "12",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "lettuce",
+   "id": "0000000004061",
+   "name": "Wrapped Iceberg Lettuce",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "20",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "salad mix",
+   "id": "0001111091038",
+   "name": "Kroger Romaine Lettuce Blend Salad Mix",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "15",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "cucumbers",
+   "id": "0085007650316",
+   "name": "Organic Cucumber Tray",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "24",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "bell peppers",
+   "id": "0000000004065",
+   "name": "Fresh Large Green Bell Pepper",
+   "desc": "International",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "25",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "jalapenos",
+   "id": "0000000004693",
+   "name": "Fresh Jalapeno Peppers",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "25",
+    "side": "L",
+    "shelf": "303"
+   }
+  },
+  {
+   "term": "mushrooms",
+   "id": "0001111062467",
+   "name": "Kroger Whole Baby Bella Mushrooms BIG DEAL!",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "8",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "zucchini",
+   "id": "0085419300398",
+   "name": "Zucchini Tray",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "24",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "green onions",
+   "id": "0085007650328",
+   "name": "Green Onions BBQ Bag",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "24",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "cilantro",
+   "id": "0000000004889",
+   "name": "Cilantro",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "23",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "ginger",
+   "id": "0000000094612",
+   "name": "Organic Ginger Root",
+   "desc": "Natural & Organic",
+   "cold": false,
+   "loc": {
+    "number": "354",
+    "description": "PRODUCE TABLE 5",
+    "bay": "1",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "watermelon",
+   "id": "0063912389401",
+   "name": "Fresh Cut In Store Watermelon",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "0",
+    "description": "PRODUCE"
+   }
+  },
+  {
+   "term": "pineapple",
+   "id": "0000000004430",
+   "name": "Fresh Ripe Whole Pineapple",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "FRUIT"
+   }
+  },
+  {
+   "term": "peaches",
+   "id": "0000000004038",
+   "name": "Fresh California Yellow Peach - Each",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "353",
+    "description": "PRODUCE TABLE 4",
+    "bay": "1",
+    "side": "L",
+    "shelf": "13"
+   }
+  },
+  {
+   "term": "pears",
+   "id": "0001111070152",
+   "name": "Kroger Bartlett Pear Tray",
+   "desc": "Produce",
+   "cold": false,
+   "loc": {
+    "number": "353",
+    "description": "PRODUCE TABLE 4",
+    "bay": "1",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "corn on the cob",
+   "id": "0001111018183",
+   "name": "Kroger Sweet Corn on the Cob",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "24",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "green beans",
+   "id": "0001111011472",
+   "name": "Kroger Cut Green Beans BIG DEAL!",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "18",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "cabbage",
+   "id": "0000000004069",
+   "name": "Green Cabbage",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "23",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "kale",
+   "id": "0001111022149",
+   "name": "Kroger Chopped Kale Bagged Salad",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "12",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "bagels",
+   "id": "0004812195951",
+   "name": "Thomas' Plain Bagels",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "25",
+    "description": "AISLE 25",
+    "bay": "4",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "croissants",
+   "id": "0004157309216",
+   "name": "Private Selection Classic All Butter Croissants",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "456",
+    "description": "BAKERY 2",
+    "bay": "3",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "muffins",
+   "id": "0001111065165",
+   "name": "Private Selection Coffee Cake Muffins",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "457",
+    "description": "BAKERY 3",
+    "bay": "1",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "donuts",
+   "id": "0001111069266",
+   "name": "Bakery Fresh Apple Fritter Donut Bites",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "457",
+    "description": "BAKERY 3",
+    "bay": "1",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "french bread",
+   "id": "0004157322506",
+   "name": "Bakery Fresh Crisp & Soft French Bread",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "456",
+    "description": "BAKERY 2",
+    "bay": "4",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "birthday cake",
+   "id": "0002430004514",
+   "name": "Little Debbie Birthday Cakes Vanilla Snack Cakes Multipack",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "GROCERY"
+   }
+  },
+  {
+   "term": "dinner rolls",
+   "id": "0001111011427",
+   "name": "Kroger White Dinner Rolls Brown and Serve",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "25",
+    "description": "AISLE 25",
+    "bay": "6",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "pie",
+   "id": "0001111020811",
+   "name": "Bakery Fresh 8 Inch Pumpkin Pie",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "458",
+    "description": "BAKERY 4",
+    "bay": "1",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "sliced turkey",
+   "id": "0022583100000",
+   "name": "Private Selection Mesquite Smoked Deli Turkey Breast Sliced",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "103",
+    "description": "DELI",
+    "bay": "11",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "sliced ham",
+   "id": "0022575400000",
+   "name": "Private Selection Wildflower Honey Deli Ham Sliced",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "103",
+    "description": "DELI",
+    "bay": "11",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "deli cheese",
+   "id": "0022626600000",
+   "name": "Private Selection Colby Jack Fresh Sliced Deli Cheese",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "103",
+    "description": "DELI",
+    "bay": "9",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "rotisserie chicken",
+   "id": "0001111006806",
+   "name": "Simple Truth Fresh Hot Roasted Whole Rotisserie Chicken - Available 11am-8pm",
+   "desc": "Deli",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "DELI/BAKE"
+   }
+  },
+  {
+   "term": "potato salad",
+   "id": "0001111003218",
+   "name": "Kroger Southern Style Potato Salad",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "441",
+    "description": "DELI 2",
+    "bay": "1",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "hummus",
+   "id": "0004082234610",
+   "name": "Sabra Classic Hummus",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "103",
+    "description": "DELI",
+    "bay": "2",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "salami",
+   "id": "0001111036596",
+   "name": "Kroger Snack Size Hard Salami",
+   "desc": "Meat & Seafood",
+   "cold": false,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "1",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "sushi",
+   "id": "0001111066109",
+   "name": "Private Selection California Sushi Combo by Snowfox",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "0",
+    "description": "DELI/BAKE"
+   }
+  },
+  {
+   "term": "fried chicken",
+   "id": "0001111068799",
+   "name": "Deli Kitchen Hot 8-Piece Fried Chicken Self-Serve (Available 11am-8pm)",
+   "desc": "Deli",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "DELI/BAKE"
+   }
+  },
+  {
+   "term": "pasta salad",
+   "id": "0065272971002",
+   "name": "Suddenly Pasta Salad Classic, 7.75 Ounces",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "3",
+    "side": "L",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "ground beef",
+   "id": "0001111063522",
+   "name": "Private Selection 80/20 Angus Chuck Ground Beef Tray 1 LB",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "20",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "chicken breast",
+   "id": "0004470003099",
+   "name": "Oscar Mayer Deli Fresh Rotisserie Seasoned Chicken Breast Thin Sliced Lunchmeat",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "37",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "chicken thighs",
+   "id": "0025313650000",
+   "name": "Heritage Farm Boneless Skinless Chicken Thighs",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "17",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "chicken wings",
+   "id": "0001111067943",
+   "name": "Kroger Raw Frozen Bone In Skin On Chicken Wings BIG DEAL!",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "0",
+    "description": "MEAT"
+   }
+  },
+  {
+   "term": "pork chops",
+   "id": "0001111069524",
+   "name": "Kroger Natural Thin Cut Boneless Pork Loin Chops",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "26",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "bacon",
+   "id": "0001111097209",
+   "name": "Kroger Thick Cut Naturally Hardwood Smoked Bacon",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "39",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "sausage",
+   "id": "0001111016140",
+   "name": "Kroger Fully Cooked Spicy Pork Breakfast Sausage Patties",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "19",
+    "description": "AISLE 19",
+    "bay": "18",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "steak",
+   "id": "0021862850000",
+   "name": "Kroger Natural Fresh Coppa Pork Shoulder Steak (Two Pack)",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "25",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "ground turkey",
+   "id": "0001111097993",
+   "name": "Kroger 85/15 Fresh Ground Turkey Tray 3 LB",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "19",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "hot dogs",
+   "id": "0004470000004",
+   "name": "Oscar Mayer Bun-Length Wieners Hot Dogs, Pack",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "33",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "salmon",
+   "id": "0021544150000",
+   "name": "Kroger Fresh Farm Raised Atlantic Salmon Fillet",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "102",
+    "description": "SEAFOOD",
+    "bay": "9",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "shrimp",
+   "id": "0001111096387",
+   "name": "Kroger Large Shrimp Cooked Peeled & Deveined Tail Off",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "102",
+    "description": "SEAFOOD",
+    "bay": "2",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "tilapia",
+   "id": "0001111086003",
+   "name": "Kroger Farm Raised Tilapia Fillets Frozen BIG DEAL!",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "102",
+    "description": "SEAFOOD",
+    "bay": "6",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "beef roast",
+   "id": "0024184200000",
+   "name": "Choice Beef Chuck Roast",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "23",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "pork tenderloin",
+   "id": "0020335800000",
+   "name": "Kroger Fresh Natural Pork Tenderloin",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "26",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "ribs",
+   "id": "0001111068832",
+   "name": "Deli Kitchen Cold Cowboy Rub Full Slab Ribs",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "103",
+    "description": "DELI",
+    "bay": "8",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "milk",
+   "id": "0001111041700",
+   "name": "Kroger 2% Reduced Fat Milk Gallon",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "25",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "eggs",
+   "id": "0001111060903",
+   "name": "Kroger Grade A Large White Eggs",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "13",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "butter",
+   "id": "0001111089301",
+   "name": "Kroger Salted Butter Sticks",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "9",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "cheddar cheese",
+   "id": "0001111050158",
+   "name": "Kroger Sharp Cheddar Shredded Cheese",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "39",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "shredded cheese",
+   "id": "0001111050204",
+   "name": "Kroger Mexican Style Blend Shredded Cheese",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "40",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "mozzarella",
+   "id": "0001111050159",
+   "name": "Kroger Mozzarella Shredded Cheese",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "39",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "cream cheese",
+   "id": "0001111089202",
+   "name": "Kroger Original Cream Cheese Brick",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "36",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "sour cream",
+   "id": "0001111016371",
+   "name": "Kroger Original Sour Cream",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "29",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "yogurt",
+   "id": "0007047000300",
+   "name": "Yoplait Original Low Fat Strawberry Yogurt Cup",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "35",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "greek yogurt",
+   "id": "0001111010717",
+   "name": "Kroger Plain Nonfat Greek Yogurt Tub",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "32",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "cottage cheese",
+   "id": "0001111045043",
+   "name": "Kroger 2% Low Fat Small Curd Cottage Cheese",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "30",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "heavy cream",
+   "id": "0001111050315",
+   "name": "Kroger Heavy Whipping Cream Pint",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "16",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "half and half",
+   "id": "0001111050268",
+   "name": "Kroger Half and Half Quart",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "16",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "coffee creamer",
+   "id": "0001111015110",
+   "name": "Kroger Caramel Vanilla Coffee Creamer",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "15",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "almond milk",
+   "id": "0001111013267",
+   "name": "Simple Truth Plant Based Non Dairy Unsweetened Almondmilk Half Gallon",
+   "desc": "Natural & Organic",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "18",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "oat milk",
+   "id": "0004410015618",
+   "name": "Planet Oat Dairy Free Original Oat Milk 52 fl oz",
+   "desc": "Natural & Organic",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "17",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "orange juice",
+   "id": "0001111048480",
+   "name": "Kroger 100% Orange Juice Pulp Free",
+   "desc": "Beverages",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "4",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "string cheese",
+   "id": "0001111058152",
+   "name": "Kroger Mozzarella String Cheese",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "40",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "biscuit dough",
+   "id": "0001800000109",
+   "name": "Pillsbury Flaky Layers Buttermilk Biscuit Dough",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "7",
+    "side": "L",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "whipped cream",
+   "id": "0001111080903",
+   "name": "Kroger Extra Creamy Dairy Whipped Cream Topping",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "16",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "parmesan",
+   "id": "0001111050195",
+   "name": "Kroger Parmesan Shredded Cheese",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "39",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "sliced cheese",
+   "id": "0022626600000",
+   "name": "Private Selection Colby Jack Fresh Sliced Deli Cheese",
+   "desc": "Deli",
+   "cold": true,
+   "loc": {
+    "number": "103",
+    "description": "DELI",
+    "bay": "9",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "frozen pizza",
+   "id": "0007192182379",
+   "name": "DiGiorno Frozen Pizza Rising Crust Ultimate Pepperoni Pizza Family Dinner",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "18",
+    "description": "AISLE 18",
+    "bay": "14",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "ice cream",
+   "id": "0004100005315",
+   "name": "Good Humor Frozen Dairy Dessert Bars Strawberry Shortcake",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "7",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "frozen vegetables",
+   "id": "0001450002128",
+   "name": "Birds Eye Steamfresh Mixed Vegetables, Frozen Vegetables",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "12",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "frozen peas",
+   "id": "0001111089736",
+   "name": "Kroger Frozen Sweet Green Peas",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "17",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "frozen corn",
+   "id": "0001111084961",
+   "name": "Kroger Frozen Super Sweet Corn",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "16",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "frozen berries",
+   "id": "0001111087808",
+   "name": "Private Selection Frozen Triple Berry Medley",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "16",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "frozen waffles",
+   "id": "0001111087830",
+   "name": "Kroger Blueberry Frozen Waffles",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "19",
+    "description": "AISLE 19",
+    "bay": "12",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "frozen burritos",
+   "id": "0007100701868",
+   "name": "El Monterey Family Size Beef & Bean Frozen Burritos",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "18",
+    "description": "AISLE 18",
+    "bay": "3",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "frozen meals",
+   "id": "0001380010072",
+   "name": "Stouffer's Classic Meatloaf Frozen Meal",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "19",
+    "description": "AISLE 19",
+    "bay": "12",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "chicken nuggets",
+   "id": "0002370006026",
+   "name": "Tyson Frozen Chicken Nuggets",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "2",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "french fries",
+   "id": "0001111087528",
+   "name": "Kroger Frozen French Fries",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "18",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "tater tots",
+   "id": "0001312000082",
+   "name": "Ore-Ida Seasoned Crispy Frozen Tater Tots",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "19",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "fish sticks",
+   "id": "0004440010270",
+   "name": "Gorton’s Crunchy Breaded Fish Sticks Cut from Real Fish, Crunchy Panko Breadcrumbs, Frozen",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "102",
+    "description": "SEAFOOD",
+    "bay": "7",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "popsicles",
+   "id": "0007756700154",
+   "name": "Popsicle Orange, Cherry and Grape Variety Pack Ice Pops, 18 Ct",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "1",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "frozen breakfast sandwiches",
+   "id": "0007790050308",
+   "name": "Jimmy Dean Sausage Egg & Cheese Croissant Frozen Breakfast Sandwiches",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "19",
+    "description": "AISLE 19",
+    "bay": "21",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "bagged ice",
+   "id": "0088877720743",
+   "name": "Earthwise Iced Limes Insulated Tote Bag",
+   "desc": "Kitchen",
+   "cold": false,
+   "loc": {
+    "number": "300",
+    "description": "CHECKLANE AUTHORIZATION ONLY",
+    "bay": "3",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "frozen dumplings",
+   "id": "0080717671170",
+   "name": "Bibigo Frozen Mini Wontons Chicken & Vegetable Dumplings",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "19",
+    "description": "AISLE 19",
+    "bay": "3",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "frozen shrimp",
+   "id": "0001111096371",
+   "name": "Kroger Crunchy Butterfly Shrimp Frozen",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "102",
+    "description": "SEAFOOD",
+    "bay": "4",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "pie crust",
+   "id": "0001111082377",
+   "name": "Kroger Unroll and Bake Pie Crusts",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "8",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "frozen broccoli",
+   "id": "0001450002183",
+   "name": "Birds Eye Steamfresh Broccoli Florets, Frozen Vegetables",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "20",
+    "description": "AISLE 20",
+    "bay": "12",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "frozen lasagna",
+   "id": "0001380014333",
+   "name": "Stouffer's Classic Lasagna with Meat and Sauce Family Frozen Meal",
+   "desc": "Frozen",
+   "cold": true,
+   "loc": {
+    "number": "19",
+    "description": "AISLE 19",
+    "bay": "5",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "whipped topping",
+   "id": "0007027223202",
+   "name": "Reddi-wip Original Whipped Topping",
+   "desc": "Dairy",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "16",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "sandwich bread",
+   "id": "0001111008486",
+   "name": "Kroger White Sandwich Bread",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "25",
+    "description": "AISLE 25",
+    "bay": "9",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "wheat bread",
+   "id": "0007313000132",
+   "name": "Oroweat 100% Whole Wheat Bread",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "25",
+    "description": "AISLE 25",
+    "bay": "5",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "hamburger buns",
+   "id": "0001111011511",
+   "name": "Kroger White Hamburger Buns",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "25",
+    "description": "AISLE 25",
+    "bay": "10",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "hot dog buns",
+   "id": "0005040075116",
+   "name": "Ball Park White Hot Dog Buns",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "25",
+    "description": "AISLE 25",
+    "bay": "11",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "english muffins",
+   "id": "0004812190063",
+   "name": "Thomas' Maple French Toast English Muffins",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "GROCERY"
+   }
+  },
+  {
+   "term": "peanut butter",
+   "id": "0001111001618",
+   "name": "Kroger Creamy Peanut Butter",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "14",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "jelly",
+   "id": "0001111011954",
+   "name": "Smart Way Grape Jelly",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "13",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "honey",
+   "id": "0001111086170",
+   "name": "Kroger Clover Honey Bear",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "14",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "hazelnut spread",
+   "id": "0001111011538",
+   "name": "Kroger Hazelnut Spread with Cocoa",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "16",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "almond butter",
+   "id": "0001111011948",
+   "name": "Simple Truth No Stir Creamy Almond Butter",
+   "desc": "Natural & Organic",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "15",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "maple syrup",
+   "id": "0004126033206",
+   "name": "Simple Truth Organic Amber Color Maple Syrup",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "21",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "pancake mix",
+   "id": "0001111088219",
+   "name": "Kroger Complete Buttermilk Pancake & Waffle Mix",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "21",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "toaster pastries",
+   "id": "0003800030305",
+   "name": "Pop-Tarts Toaster Pastries Variety Pack",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "11",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "tortillas",
+   "id": "0007373100415",
+   "name": "Mission Super Soft Flour Tortillas, Soft Taco Size, 10 Count",
+   "desc": "International",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "19",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "cereal",
+   "id": "0001600012254",
+   "name": "General Mills Cinnamon Toast Crunch Cereal",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "15",
+    "description": "AISLE 15",
+    "bay": "5",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "oatmeal",
+   "id": "0003000056728",
+   "name": "Quaker Maple & Brown Sugar Instant Oatmeal",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "15",
+    "description": "AISLE 15",
+    "bay": "11",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "granola",
+   "id": "0001111013881",
+   "name": "Kroger Oats & Honey Granola",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "15",
+    "description": "AISLE 15",
+    "bay": "18",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "granola bars",
+   "id": "0001111003763",
+   "name": "Kroger Chewy Granola Bars Variety Pack",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "10",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "coffee",
+   "id": "0002550030407",
+   "name": "Folgers Classic Roast Ground Coffee, Medium Roast",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "12",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "ground coffee",
+   "id": "0078535702352",
+   "name": "Peet's Coffee, Big Bang, Medium Roast Ground Coffee - 10.5oz Bag",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "14",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "coffee pods",
+   "id": "0001111007451",
+   "name": "Kroger Donut Shop Blend Medium Roast K-Cup Coffee Pods",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "21",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "tea",
+   "id": "0009147504189",
+   "name": "Milo's Famous Sweet Iced Tea",
+   "desc": "Beverages",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "2",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "green tea",
+   "id": "0007231000847",
+   "name": "Bigelow Classic Green Tea Bags",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "7",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "hot cocoa",
+   "id": "0007092047633",
+   "name": "Swiss Miss Milk Chocolate Flavored Hot Cocoa Mix",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "9",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "breakfast bars",
+   "id": "0004400002829",
+   "name": "belVita Blueberry Breakfast Bars Biscuits",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "5",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "protein bars",
+   "id": "0001111011125",
+   "name": "Kroger Peanut Butter and Dark Chocolate Flavored Chewy Protein Bars",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "9",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "cheerios",
+   "id": "0001600027526",
+   "name": "General Mills Cheerios Cereal",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "15",
+    "description": "AISLE 15",
+    "bay": "11",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "frosted flakes",
+   "id": "0001111014931",
+   "name": "Kroger Frosted Flakes Cereal",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "15",
+    "description": "AISLE 15",
+    "bay": "7",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "grits",
+   "id": "0003000004170",
+   "name": "Quaker Quick 5 Minute Grits",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "15",
+    "description": "AISLE 15",
+    "bay": "12",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "cream of wheat",
+   "id": "0001313000612",
+   "name": "Cream of Wheat Original 2 1/2- Minute",
+   "desc": "Breakfast",
+   "cold": false,
+   "loc": {
+    "number": "15",
+    "description": "AISLE 15",
+    "bay": "12",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "chicken noodle soup",
+   "id": "0005100012938",
+   "name": "Campbell's Condensed Chicken Noodle Soup",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "2",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "tomato soup",
+   "id": "0005100000011",
+   "name": "Campbell's Condensed Tomato Soup",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "2",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "broth",
+   "id": "0001111004963",
+   "name": "Simple Truth Organic Low Sodium Free Range Chicken Broth",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "3",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "chicken broth",
+   "id": "0005100012114",
+   "name": "Swanson Chicken Broth",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "4",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "canned tuna",
+   "id": "0008000000673",
+   "name": "StarKist Chunk Light Tuna in Water Can",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "6",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "canned chicken",
+   "id": "0005100018806",
+   "name": "Swanson White Premium Chunk Canned Chicken Breast In Water",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "8",
+    "side": "L",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "black beans",
+   "id": "0001111012209",
+   "name": "Kroger No Salt Added Black Beans",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "13",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "kidney beans",
+   "id": "0001111071787",
+   "name": "Kroger Dark Red Kidney Beans",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "13",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "chickpeas",
+   "id": "0003940000117",
+   "name": "Bush's Chickpeas 15.5 oz",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "14",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "refried beans",
+   "id": "0001111086503",
+   "name": "Kroger Traditional Refried Beans",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "15",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "canned corn",
+   "id": "0001111013232",
+   "name": "Simple Truth Organic Whole Kernel Canned Corn Super Sweet BIG DEAL!",
+   "desc": "Natural & Organic",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "18",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "canned green beans",
+   "id": "0002400016286",
+   "name": "Del Monte Fresh Cut Blue Lake Cut Green Beans 14.5 oz. Can",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "18",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "diced tomatoes",
+   "id": "0001111011616",
+   "name": "Kroger Diced Tomatoes",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "17",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "tomato paste",
+   "id": "0001111011971",
+   "name": "Kroger Tomato Paste",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "17",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "canned peaches",
+   "id": "0001111002927",
+   "name": "Kroger Canned Yellow Cling Sliced Peaches in Heavy Syrup",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "11",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "applesauce",
+   "id": "0001111085025",
+   "name": "Kroger No Sugar Added Classic Apple Applesauce",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "14",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "chili",
+   "id": "0003760024193",
+   "name": "HORMEL Chili No Beans 15oz",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "8",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "canned pumpkin",
+   "id": "0003900004504",
+   "name": "Libby's 100% Pure Canned Pumpkin",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "1",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "spaghetti",
+   "id": "0007680828008",
+   "name": "Barilla Spaghetti Pasta, Quality Non-GMO and Kosher Certified Pasta",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "13",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "penne",
+   "id": "0001111085033",
+   "name": "Kroger Penne Rigate Pasta",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "14",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "macaroni and cheese",
+   "id": "0001111010014",
+   "name": "Kroger Deluxe Shells and Cheddar Macaroni and Cheese",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "3",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "rice",
+   "id": "0001111089875",
+   "name": "Kroger Enriched Long Grain White Rice",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "3",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "brown rice",
+   "id": "0001111089874",
+   "name": "Kroger Long Grain Brown Rice",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "3",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "pasta sauce",
+   "id": "0001111013414",
+   "name": "Kroger Tomato Basil Pasta Sauce",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "8",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "alfredo sauce",
+   "id": "0001111085100",
+   "name": "Kroger Roasted Garlic Alfredo Sauce",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "11",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "ramen",
+   "id": "0004178900231",
+   "name": "Maruchan Ramen Noodle Soup, Chicken Flavor Instant Noodles",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "12",
+    "description": "AISLE 12",
+    "bay": "11",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "egg noodles",
+   "id": "0001111085126",
+   "name": "Kroger Extra Wide Egg Noodles",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "13",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "soy sauce",
+   "id": "0004139000105",
+   "name": "Kikkoman Less Sodium Soy Sauce",
+   "desc": "International",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "10",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "taco shells",
+   "id": "0001111085475",
+   "name": "Kroger Original Crisp Taco Shells",
+   "desc": "Bakery",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "14",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "salsa",
+   "id": "0063912388017",
+   "name": "Fresh Made In Store Salsa Mild",
+   "desc": "Produce",
+   "cold": true,
+   "loc": {
+    "number": "0",
+    "description": "PRODUCE"
+   }
+  },
+  {
+   "term": "taco seasoning",
+   "id": "0001111013963",
+   "name": "Kroger Taco Seasoning",
+   "desc": "International",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "15",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "enchilada sauce",
+   "id": "0004600086011",
+   "name": "Old El Paso Mild Red Enchilada Sauce",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "16",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "coconut milk",
+   "id": "0001111085735",
+   "name": "Simple Truth Organic Unsweetened Coconut Milk",
+   "desc": "Natural & Organic",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "5",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "curry paste",
+   "id": "0001111012988",
+   "name": "Private Selection Thai Style Red Curry Paste",
+   "desc": "International",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "10",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "lasagna noodles",
+   "id": "0002920000301",
+   "name": "Mueller's Lasagna Noodles",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "15",
+    "side": "L",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "quinoa",
+   "id": "0001111091238",
+   "name": "Simple Truth Organic Quinoa",
+   "desc": "Pasta, Sauces, Grain",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "4",
+    "side": "R",
+    "shelf": "8"
+   }
+  },
+  {
+   "term": "flour",
+   "id": "0001111086116",
+   "name": "Kroger Unbleached Enriched All Purpose Flour",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "6",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "sugar",
+   "id": "0001111011888",
+   "name": "Smart Way Granulated Sugar",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "11",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "brown sugar",
+   "id": "0001111085585",
+   "name": "Kroger Light Brown Sugar",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "11",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "powdered sugar",
+   "id": "0001111085587",
+   "name": "Kroger Powdered Sugar",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "11",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "baking soda",
+   "id": "0001111085451",
+   "name": "Baking Soda 1# box",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "3",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "baking powder",
+   "id": "0001990000320",
+   "name": "Clabber Girl Double Acting Baking Powder",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "4",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "vanilla extract",
+   "id": "0005210007103",
+   "name": "McCormick Pure Vanilla Extract",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "3",
+    "side": "L",
+    "shelf": "10"
+   }
+  },
+  {
+   "term": "chocolate chips",
+   "id": "0002800021580",
+   "name": "Nestle Toll House Semi-Sweet Chocolate Morsels Chocolate Chips",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "3",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "cake mix",
+   "id": "0001600020711",
+   "name": "Betty Crocker Favorites Super Moist Yellow Cake Mix",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "15",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "brownie mix",
+   "id": "0064420931131",
+   "name": "Duncan Hines Family Size Chewy Fudge Brownie Mix",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "16",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "frosting",
+   "id": "0001330076080",
+   "name": "Pillsbury Creamy Supreme Vanilla Frosting, 16 oz Tub",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "16",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "yeast",
+   "id": "0004010000721",
+   "name": "Fleischmann's Active Dry Yeast",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "1",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "cornstarch",
+   "id": "0001111038513",
+   "name": "Comforts Pure Cornstarch Baby Powder With Aloe Vera & Vitamin E",
+   "desc": "Baby",
+   "cold": false,
+   "loc": {
+    "number": "21",
+    "description": "AISLE 21",
+    "bay": "6",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "vegetable oil",
+   "id": "0001111085605",
+   "name": "Kroger 100% Pure Vegetable Oil",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "18",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "olive oil",
+   "id": "0001111004412",
+   "name": "Kroger Extra Virgin Olive Oil",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "2",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "cooking spray",
+   "id": "0001111014540",
+   "name": "Kroger Nonstick Canola Oil Cooking Spray",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "17",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "salt",
+   "id": "0001111004808",
+   "name": "Kroger Iodized Salt",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "4",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "black pepper",
+   "id": "0001111011742",
+   "name": "Smart Way Ground Black Pepper",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "5",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "cinnamon",
+   "id": "0001111011748",
+   "name": "Smart Way Ground Cinnamon",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "5",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "garlic powder",
+   "id": "0001111011739",
+   "name": "Smart Way Garlic Powder",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "5",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "paprika",
+   "id": "0001111011743",
+   "name": "Smart Way Ground Paprika",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "5",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "chili powder",
+   "id": "0001111011749",
+   "name": "Smart Way Chili Powder",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "5",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "italian seasoning",
+   "id": "0001111011751",
+   "name": "Smart Way Italian Seasoning",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "5",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "breadcrumbs",
+   "id": "0001111013527",
+   "name": "Kroger Italian Bread Crumbs",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "8",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "marshmallows",
+   "id": "0001111009385",
+   "name": "Kroger Regular Marshmallows",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "4",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "ketchup",
+   "id": "0001300000124",
+   "name": "Heinz Tomato Ketchup",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "4",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "mustard",
+   "id": "0001111081237",
+   "name": "Kroger Original Yellow Mustard",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "4",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "mayonnaise",
+   "id": "0005250005005",
+   "name": "Duke's Real Mayonnaise, 30 fl oz Jar, Smooth & Creamy Mayo",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "15",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "ranch dressing",
+   "id": "0001111066912",
+   "name": "Kroger Creamy Ranch Salad Dressing",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "12",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "italian dressing",
+   "id": "0001111067425",
+   "name": "Kroger Zesty Italian Salad Dressing",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "12",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "bbq sauce",
+   "id": "0001340991810",
+   "name": "Sweet Baby Ray's BBQ Sauce",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "8",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "hot sauce",
+   "id": "0004150080502",
+   "name": "Frank's RedHot Original Cayenne Pepper Hot Sauce",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "7",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "pickles",
+   "id": "0085899600500",
+   "name": "Grillo's Pickles Classic Dill Pickle Chips",
+   "desc": "Meat & Seafood",
+   "cold": true,
+   "loc": {
+    "number": "101",
+    "description": "MEAT",
+    "bay": "38",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "relish",
+   "id": "0005410001820",
+   "name": "Vlasic Sweet Relish",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "3",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "vinegar",
+   "id": "0001111011200",
+   "name": "Smart Way White Distilled Vinegar",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "1",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "apple cider vinegar",
+   "id": "0001111086200",
+   "name": "Kroger 5% Apple Cider Vinegar",
+   "desc": "Baking Goods",
+   "cold": false,
+   "loc": {
+    "number": "13",
+    "description": "AISLE 13",
+    "bay": "1",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "worcestershire sauce",
+   "id": "0001111066985",
+   "name": "Kroger Worcestershire Sauce",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "6",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "olives",
+   "id": "0001111012596",
+   "name": "Kroger Sliced Black Olives",
+   "desc": "Canned & Packaged",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "1",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "steak sauce",
+   "id": "0001111073514",
+   "name": "Kroger The Universal Steak Sauce",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "6",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "sriracha",
+   "id": "0002446306116",
+   "name": "Huy Fong Sriracha Hot Chili Sauce",
+   "desc": "International",
+   "cold": false,
+   "loc": {
+    "number": "11",
+    "description": "AISLE 11",
+    "bay": "10",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "potato chips",
+   "id": "0007260005717",
+   "name": "Chick-fil-A Original Flavor Waffle Potato Chips",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "9",
+    "description": "AISLE 9",
+    "bay": "10",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "tortilla chips",
+   "id": "0001111010996",
+   "name": "Kroger White Corn Restaurant Style Tortilla Chips",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "9",
+    "description": "AISLE 9",
+    "bay": "9",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "pretzels",
+   "id": "0001111009477",
+   "name": "Kroger Pretzel Mini Twists",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "9",
+    "description": "AISLE 9",
+    "bay": "11",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "popcorn",
+   "id": "0001111079903",
+   "name": "Kroger Movie Theater Butter Microwave Popcorn",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "3",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "crackers",
+   "id": "0004400008042",
+   "name": "RITZ Fudge Covered Holiday Crackers",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "GROCERY"
+   }
+  },
+  {
+   "term": "goldfish crackers",
+   "id": "0001410004912",
+   "name": "Goldfish Halloween Cheddar Cheese Crackers Multipack, 24 Pack",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "GROCERY"
+   }
+  },
+  {
+   "term": "cheez its",
+   "id": "0002410010685",
+   "name": "Cheez-It Crackers Original",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "9",
+    "description": "AISLE 9",
+    "bay": "1",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "cookies",
+   "id": "0074759943860",
+   "name": "Ghirardelli Classic Chocolate Chip Crispy Cookies",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "5",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "oreos",
+   "id": "0004400006023",
+   "name": "OREO Chocolate Sandwich Cookies Family Size",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "1",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "graham crackers",
+   "id": "0001111090393",
+   "name": "Kroger Original Graham Crackers",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "4",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "peanuts",
+   "id": "0001111061315",
+   "name": "PEANUTS SALTED WITH SEA SALT - KROGER - 12 OZ",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "15",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "almonds",
+   "id": "0001111002466",
+   "name": "Simple Truth Raw Almonds",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "1",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "trail mix",
+   "id": "0001111001954",
+   "name": "SIMPLY CLASSIC TRAIL MIX - KROGER - 36 OZ",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "15",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "rice cakes",
+   "id": "0003000016901",
+   "name": "Quaker Lightly Salted Rice Cakes",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "5",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "fruit snacks",
+   "id": "0001600048764",
+   "name": "Mott's Assorted Fruit Snacks",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "12",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "beef jerky",
+   "id": "0001708287635",
+   "name": "Jack Link's Teriyaki Beef Jerky",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "13",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "pita chips",
+   "id": "0002840056463",
+   "name": "Stacy’s Pita Chips, Sea Salt, No Artificial Colors or Flavors",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "444",
+    "description": "DELI 5",
+    "bay": "1",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "cashews",
+   "id": "0001111002473",
+   "name": "Simple Truth Sea Salt Roasted Cashews",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "1",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "sunflower seeds",
+   "id": "0002620046193",
+   "name": "DAVID Jumbo Sunflower Seeds, Salted & Roasted Original Flavor",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "17",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "animal crackers",
+   "id": "0001111005854",
+   "name": "Kroger Animal Crackers BIG DEAL!",
+   "desc": "Snacks",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "4",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "water",
+   "id": "0001111009855",
+   "name": "Kroger Purified Bottled Water",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "19",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "sparkling water",
+   "id": "0001111015395",
+   "name": "Kroger Caffeine Free Strawberry Lemonade Sparkling Water",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "6",
+    "description": "AISLE 6",
+    "bay": "14",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "soda",
+   "id": "0001200026002",
+   "name": "Mountain Dew Variety Pack Soda Cans",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "GROCERY"
+   }
+  },
+  {
+   "term": "coke",
+   "id": "0004900002891",
+   "name": "Diet Coke Soda Cans",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "7",
+    "description": "AISLE 7",
+    "bay": "13",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "diet coke",
+   "id": "0004900001063",
+   "name": "Diet Coke Soda Cans",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "7",
+    "description": "AISLE 7",
+    "bay": "14",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "sprite",
+   "id": "0004900001938",
+   "name": "Sprite Lemon-Lime Caffeine Free Soda Cans",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "7",
+    "description": "AISLE 7",
+    "bay": "12",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "ginger ale",
+   "id": "0007800015216",
+   "name": "Canada Dry Ginger Ale Caffeine Free Soda Cans",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "2",
+    "description": "AISLE 2",
+    "bay": "6",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "apple juice",
+   "id": "0001111003962",
+   "name": "Kroger 100% Apple Juice",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "7",
+    "description": "AISLE 7",
+    "bay": "6",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "cranberry juice",
+   "id": "0003120020007",
+   "name": "Ocean Spray Cranberry Juice Cocktail",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "7",
+    "description": "AISLE 7",
+    "bay": "5",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "lemonade",
+   "id": "0002500004498",
+   "name": "Simply Lemonade Bottle",
+   "desc": "Beverages",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "5",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "sports drink",
+   "id": "0004900007936",
+   "name": "POWERADE Orange Sports Drink Bottle",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "6",
+    "description": "AISLE 6",
+    "bay": "1",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "gatorade",
+   "id": "0005200012206",
+   "name": "Gatorade Cool Blue Sports Drink Multipack Bottles",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "6",
+    "description": "AISLE 6",
+    "bay": "6",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "energy drink",
+   "id": "0088939201019",
+   "name": "Celsius Energy Drink Peach Vibe 12 Fl Oz",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "8",
+    "description": "AISLE 8",
+    "bay": "9",
+    "side": "L",
+    "shelf": "8"
+   }
+  },
+  {
+   "term": "iced tea",
+   "id": "0004900007418",
+   "name": "Gold Peak Unsweetened Black Iced Tea Bottle",
+   "desc": "Beverages",
+   "cold": true,
+   "loc": {
+    "number": "100",
+    "description": "DAIRY",
+    "bay": "2",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "coconut water",
+   "id": "0001111085486",
+   "name": "Simple Truth Organic Original No Sugar Added Coconut Water Carton",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "6",
+    "description": "AISLE 6",
+    "bay": "8",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "drink mix",
+   "id": "0001111014474",
+   "name": "Kroger Lite Zero Sugar Grape Instant Drink Mix Packets",
+   "desc": "Beverages",
+   "cold": false,
+   "loc": {
+    "number": "7",
+    "description": "AISLE 7",
+    "bay": "2",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "paper towels",
+   "id": "0001111014186",
+   "name": "Kroger Ultra Paper Towels With Absorbing Power Double Rolls",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "18",
+    "description": "AISLE 18",
+    "bay": "4",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "toilet paper",
+   "id": "0004200087590",
+   "name": "Quilted Northern Ultra Plush Toilet Paper Mega Roll",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "18",
+    "description": "AISLE 18",
+    "bay": "14",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "napkins",
+   "id": "0001111011609",
+   "name": "Smart Way Paper Napkins",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "24",
+    "description": "AISLE 24",
+    "bay": "6",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "paper plates",
+   "id": "0001111086951",
+   "name": "Kroger Celebration Paper Plates",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "24",
+    "description": "AISLE 24",
+    "bay": "10",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "plastic cups",
+   "id": "0001111082580",
+   "name": "Kroger Celebration Textured Plastic Cups",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "24",
+    "description": "AISLE 24",
+    "bay": "8",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "trash bags",
+   "id": "0001111013422",
+   "name": "Kroger Tall Kitchen 13 Gallon Drawstring Trash Bags",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "24",
+    "description": "AISLE 24",
+    "bay": "2",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "aluminum foil",
+   "id": "0001090000015",
+   "name": "Reynolds Wrap Aluminum Foil",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "24",
+    "description": "AISLE 24",
+    "bay": "3",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "plastic wrap",
+   "id": "0001258700020",
+   "name": "Glad Cling N Seal Plastic Food Wrap",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "24",
+    "description": "AISLE 24",
+    "bay": "3",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "zipper bags",
+   "id": "0001111013668",
+   "name": "Kroger Double Zipper Reclosable Sandwich Bags",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "24",
+    "description": "AISLE 24",
+    "bay": "4",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "dish soap",
+   "id": "0003077221316",
+   "name": "Dawn Ultra Refill Jug Dish Soap Dishwashing Liquid Apple Blossom",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "3",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "dishwasher detergent",
+   "id": "0001111008266",
+   "name": "Kroger Dishwasher Detergent Gel Lemon Scent",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "1",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "laundry detergent",
+   "id": "0003320000281",
+   "name": "ARM & HAMMER Sensitive Skin Plus Fresh Scent Liquid Laundry Detergent",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "7",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "fabric softener",
+   "id": "0007261347481",
+   "name": "Snuggle Liquid Fabric Softener Blue Sparkle Cuddle Up Fresh Scent",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "4",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "bleach",
+   "id": "0001111011542",
+   "name": "Smart Way Regular Bleach",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "2",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "all purpose cleaner",
+   "id": "0001920075352",
+   "name": "Lysol All Purpose Cleaner Spray Lemon Breeze",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "12",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "sponges",
+   "id": "0002120057235",
+   "name": "Scotch-Brite Heavy Duty Scrub Sponge, 3 Kitchen Sponges",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "1",
+    "side": "R",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "light bulbs",
+   "id": "0004667756548",
+   "name": "Philips 9-Watt (60-Watt) A19 LED Light Bulb - Daylight (5000K)",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "22",
+    "description": "AISLE 22",
+    "bay": "1",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "batteries",
+   "id": "0003980014520",
+   "name": "Energizer Max AA Alkaline Batteries",
+   "desc": "Sporting Goods",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "2",
+    "side": "L",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "tissues",
+   "id": "0001111012828",
+   "name": "Kroger Facial Tissues with Lotion",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "18",
+    "description": "AISLE 18",
+    "bay": "10",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "disinfecting wipes",
+   "id": "0001920081700",
+   "name": "LYSOL Dual Action Disinfecting Wipes Cannister",
+   "desc": "Cleaning Products",
+   "cold": false,
+   "loc": {
+    "number": "23",
+    "description": "AISLE 23",
+    "bay": "9",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "toothpaste",
+   "id": "0003700090734",
+   "name": "Crest + Scope Mint Outlast Complete Whitening Toothpaste Value Pack",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "10",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "toothbrush",
+   "id": "0003500055190",
+   "name": "COLGATE EXTRA CLEAN MANUAL TOOTHBRUSH ORIGINAL",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "12",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "mouthwash",
+   "id": "0001111038078",
+   "name": "Kroger Antiseptic Blue Mint Mouthwash",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "13",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "dental floss",
+   "id": "0001111079921",
+   "name": "Kroger Waxed Dental Floss Mint",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "14",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "shampoo",
+   "id": "0038371100458",
+   "name": "Suave Essentials Daily Clarifying Shampoo, Deep Cleansing for All Hair Types, 22.5 FL OZ",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "16",
+    "description": "AISLE 16",
+    "bay": "16",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "conditioner",
+   "id": "0002240063901",
+   "name": "TRESemmé Rich Moisture with Pro Style Technology Formula for Dry Hair Conditioner,",
+   "desc": "Beauty",
+   "cold": false,
+   "loc": {
+    "number": "16",
+    "description": "AISLE 16",
+    "bay": "14",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "body wash",
+   "id": "0003077222069",
+   "name": "Olay Ultra Moisture Body Wash with Shea Butter Vitamin B3 and Hyaluronic Blend",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "16",
+    "description": "AISLE 16",
+    "bay": "14",
+    "side": "R",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "bar soap",
+   "id": "0001700002410",
+   "name": "Dial Refresh & Renew White Antibacterial Deodorant Bar Soap",
+   "desc": "Beauty",
+   "cold": false,
+   "loc": {
+    "number": "16",
+    "description": "AISLE 16",
+    "bay": "13",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "deodorant",
+   "id": "0007940044870",
+   "name": "Degree Antiperspirant Deodorant 72-hour Sweat and Odor Protection",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "15",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "lotion",
+   "id": "0007214063482",
+   "name": "Eucerin Advanced Repair Lotion for Very Dry Skin",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "16",
+    "description": "AISLE 16",
+    "bay": "9",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "sunscreen",
+   "id": "0004126002388",
+   "name": "Kroger SPF 50 Broad Spectrum Total Sport Sunscreen Spray Twin Pack",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "16",
+    "description": "AISLE 16",
+    "bay": "10",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "razors",
+   "id": "0004740031389",
+   "name": "Venus Women's Sensitive Skin 3-Blade Disposable Razors",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "18",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "shaving cream",
+   "id": "0005100900960",
+   "name": "Barbasol Thick & Rich Sensitive Skin Shaving Cream",
+   "desc": "Personal Care",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "17",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "cotton swabs",
+   "id": "0004126002514",
+   "name": "Kroger Paper Cotton Swabs",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "16",
+    "description": "AISLE 16",
+    "bay": "7",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "bandages",
+   "id": "0004126038409",
+   "name": "Kroger Advanced Antibacterial Plastic Bandages",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "6",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "ibuprofen",
+   "id": "0004126001301",
+   "name": "Kroger Pain Reliver Fever Reducer Ibuprofen Tablets 200 mg",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "5",
+    "side": "R",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "acetaminophen",
+   "id": "0001111079993",
+   "name": "Kroger Extra Strength Pain Reliever and Fever Reducer Acetaminophen Caplets 500mg",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "4",
+    "side": "R",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "allergy medicine",
+   "id": "0004116735101",
+   "name": "Xyzal 24 Hour Allergy Relief Medicine Levocetirizine Dihydrochloride Antihistamine Tablets",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "2",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "cough drops",
+   "id": "0031254662869",
+   "name": "HALLS Cough and Throat Relief Honey Lemon Cough Drops",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "17",
+    "description": "AISLE 17",
+    "bay": "3",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "vitamins",
+   "id": "0003160402585",
+   "name": "Nature Made Vitamin D3 2000 IU (50 mcg) Softgels",
+   "desc": "Health",
+   "cold": false,
+   "loc": {
+    "number": "108",
+    "description": "PHARMACY",
+    "bay": "3",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "diapers",
+   "id": "0003700074969",
+   "name": "Pampers Swaddlers Baby Diapers Size 5 (27+ lbs)",
+   "desc": "Baby",
+   "cold": false,
+   "loc": {
+    "number": "21",
+    "description": "AISLE 21",
+    "bay": "12",
+    "side": "R",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "baby wipes",
+   "id": "0004126002094",
+   "name": "Comforts Fragrance Free Baby Wipes",
+   "desc": "Baby",
+   "cold": false,
+   "loc": {
+    "number": "21",
+    "description": "AISLE 21",
+    "bay": "7",
+    "side": "R",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "baby food",
+   "id": "0005220020019",
+   "name": "Beech-Nut Veggies Stage 2 Baby Food Variety Pack",
+   "desc": "Baby",
+   "cold": false,
+   "loc": {
+    "number": "21",
+    "description": "AISLE 21",
+    "bay": "4",
+    "side": "R",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "baby formula",
+   "id": "0030087136542",
+   "name": "Enfamil Milk-based Powder with Iron Baby Formula",
+   "desc": "Baby",
+   "cold": false,
+   "loc": {
+    "number": "21",
+    "description": "AISLE 21",
+    "bay": "1",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "dog food",
+   "id": "0001780047568",
+   "name": "Natural Dog Food, Chicken and Rice Formula Dry Dog food for Digestive and Gut Health Support",
+   "desc": "Pet Care",
+   "cold": false,
+   "loc": {
+    "number": "22",
+    "description": "AISLE 22",
+    "bay": "10",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "cat food",
+   "id": "0002310011884",
+   "name": "Sheba Perfect Portions Adult Wet Cat Food Pate Seafood & Salmon & Whitefish & Tuna Variety Pack",
+   "desc": "Pet Care",
+   "cold": false,
+   "loc": {
+    "number": "22",
+    "description": "AISLE 22",
+    "bay": "9",
+    "side": "R",
+    "shelf": "9"
+   }
+  },
+  {
+   "term": "cat litter",
+   "id": "0007023011620",
+   "name": "Tidy Cats Clumping Cat Litter, 24/7 Performance Multi Cat Litter",
+   "desc": "Pet Care",
+   "cold": false,
+   "loc": {
+    "number": "22",
+    "description": "AISLE 22",
+    "bay": "7",
+    "side": "R",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "dog treats",
+   "id": "0007910052000",
+   "name": "Canine Carry Outs Beef Flavor Dog Treats",
+   "desc": "Pet Care",
+   "cold": false,
+   "loc": {
+    "number": "22",
+    "description": "AISLE 22",
+    "bay": "3",
+    "side": "L",
+    "shelf": "4"
+   }
+  },
+  {
+   "term": "cat treats",
+   "id": "0002310010755",
+   "name": "Temptations Classic Crunchy and Soft Cat Treats Tasty Chicken Flavor",
+   "desc": "Pet Care",
+   "cold": false,
+   "loc": {
+    "number": "22",
+    "description": "AISLE 22",
+    "bay": "8",
+    "side": "R",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "candy",
+   "id": "0004000059755",
+   "name": "Snickers Twix Milky Way & 3 Musketeers Minis Chocolate Candy Bars Variety Pack Bag",
+   "desc": "Candy",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "7",
+    "side": "L",
+    "shelf": "3"
+   }
+  },
+  {
+   "term": "chocolate bar",
+   "id": "0003400029005",
+   "name": "HERSHEY'S Milk Chocolate S'mores Candy Bars",
+   "desc": "Candy",
+   "cold": false,
+   "loc": {
+    "number": "300",
+    "description": "CHECKLANE 12",
+    "bay": "1",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "gum",
+   "id": "0002200001787",
+   "name": "Extra Gum Spearmint Sugar Free Chewing Gum Mega Pack",
+   "desc": "Candy",
+   "cold": false,
+   "loc": {
+    "number": "300",
+    "description": "CHECKLANE 2",
+    "bay": "1",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "mints",
+   "id": "0001111001818",
+   "name": "Simple Truth Organic Mint",
+   "desc": "Natural & Organic",
+   "cold": true,
+   "loc": {
+    "number": "105",
+    "description": "PRODUCE",
+    "bay": "8",
+    "side": "L",
+    "shelf": "6"
+   }
+  },
+  {
+   "term": "beer",
+   "id": "0001820096715",
+   "name": "Michelob ULTRA Superior Light American Lager Beer",
+   "desc": "Adult Beverage",
+   "cold": true,
+   "loc": {
+    "number": "2",
+    "description": "AISLE 2",
+    "bay": "1",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "wine",
+   "id": "0008176129242",
+   "name": "Three Graces Napa Valley Cabernet Sauvignon Red Wine",
+   "desc": "Adult Beverage",
+   "cold": false,
+   "loc": {
+    "number": "3",
+    "description": "AISLE 3",
+    "bay": "2",
+    "side": "L",
+    "shelf": "5"
+   }
+  },
+  {
+   "term": "hard seltzer",
+   "id": "0063598510024",
+   "name": "White Claw Variety Pack Hard Seltzer",
+   "desc": "Adult Beverage",
+   "cold": true,
+   "loc": {
+    "number": "6",
+    "description": "AISLE 6",
+    "bay": "9",
+    "side": "L",
+    "shelf": "1"
+   }
+  },
+  {
+   "term": "gummy bears",
+   "id": "0004223830251",
+   "name": "HARIBO Goldbears Gummy Bears, Party Size, Resealable Candy Bag",
+   "desc": "Candy",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "16",
+    "side": "L",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "peanut butter cups",
+   "id": "0005150065642",
+   "name": "Jif Creamy Peanut Butter To Go Cups",
+   "desc": "Condiment & Sauces",
+   "cold": false,
+   "loc": {
+    "number": "14",
+    "description": "AISLE 14",
+    "bay": "16",
+    "side": "L",
+    "shelf": "7"
+   }
+  },
+  {
+   "term": "licorice",
+   "id": "0003400056023",
+   "name": "TWIZZLERS Bites Cherry Flavored Licorice Style Chewy Candy Bag",
+   "desc": "Candy",
+   "cold": false,
+   "loc": {
+    "number": "10",
+    "description": "AISLE 10",
+    "bay": "17",
+    "side": "L",
+    "shelf": "2"
+   }
+  },
+  {
+   "term": "gift card",
+   "id": "0000000816061",
+   "name": "Amazon $25-$500 Gift Card - Activate and add value after Checkout",
+   "desc": "Gift Cards",
+   "cold": false,
+   "loc": null
+  },
+  {
+   "term": "firewood",
+   "id": "0081090402044",
+   "name": "Mountain Timbers Firewood",
+   "desc": "Hardware",
+   "cold": false,
+   "loc": null
+  },
+  {
+   "term": "propane",
+   "id": "0079500800100",
+   "name": "Blue Rhino Exchange Propane Tank",
+   "desc": "Garden & Patio",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "DRUG/GM"
+   }
+  },
+  {
+   "term": "magazine",
+   "id": "0007143510227",
+   "name": "People Magazine",
+   "desc": "Entertainment",
+   "cold": false,
+   "loc": {
+    "number": "0",
+    "description": "DRUG/GM"
+   }
+  }
+ ]
+}
