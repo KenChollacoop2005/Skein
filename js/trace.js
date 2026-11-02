@@ -33,15 +33,21 @@ export function markAt(walk, type, extra = {}) {
   return m;
 }
 
-// Spread the loop error over the perimeter walk
+// Spread the loop error over the legs along each axis
 export function closeLoop(points, end, target) {
   const err = [points[end][0] - target[0], points[end][1] - target[1]];
-  const dist = [0];
-  for (let i = 1; i < points.length; i++) dist.push(dist[i - 1] + Math.hypot(points[i][0] - points[i - 1][0], points[i][1] - points[i - 1][1]));
-  const total = dist[end] || 1;
+  const cum = [[0, 0, 0]];
+  for (let i = 1; i < points.length; i++) {
+    const dx = Math.abs(points[i][0] - points[i - 1][0]), dy = Math.abs(points[i][1] - points[i - 1][1]);
+    const c = cum[i - 1];
+    cum.push([c[0] + dx, c[1] + dy, c[2] + Math.hypot(dx, dy)]);
+  }
+  const [tx, ty, td] = cum[end];
   return points.map((p, i) => {
-    const f = i <= end ? dist[i] / total : 1;
-    return [p[0] - err[0] * f, p[1] - err[1] * f];
+    const c = cum[Math.min(i, end)];
+    const fx = tx > 1e-9 ? c[0] / tx : c[2] / (td || 1);
+    const fy = ty > 1e-9 ? c[1] / ty : c[2] / (td || 1);
+    return [p[0] - err[0] * fx, p[1] - err[1] * fy];
   });
 }
 
@@ -50,10 +56,12 @@ function rdp(pts, a, b, tol, keep) {
   while (stack.length) {
     const [i0, i1] = stack.pop();
     const [x1, y1] = pts[i0], [x2, y2] = pts[i1];
-    const len = Math.hypot(x2 - x1, y2 - y1) || 1e-9;
+    const len = Math.hypot(x2 - x1, y2 - y1);
     let best = -1, bestD = tol;
     for (let i = i0 + 1; i < i1; i++) {
-      const d = Math.abs((x2 - x1) * (y1 - pts[i][1]) - (x1 - pts[i][0]) * (y2 - y1)) / len;
+      const d = len < 1e-6
+        ? Math.hypot(pts[i][0] - x1, pts[i][1] - y1)
+        : Math.abs((x2 - x1) * (y1 - pts[i][1]) - (x1 - pts[i][0]) * (y2 - y1)) / len;
       if (d > bestD) { bestD = d; best = i; }
     }
     if (best >= 0) { keep[best] = 1; stack.push([i0, best], [best, i1]); }

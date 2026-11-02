@@ -312,3 +312,13 @@ dialog.sheet::backdrop { background: rgba(36, 34, 31, 0.35); }
 .setup-controls { margin-top: 10px; }
 .aisle-num { width: 6em; }
 .dept-group { margin: 10px 0 0; }
+
+/* Stores */
+.store-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.store-bar label { margin: 0; }
+.store-bar select { flex: 1 1 auto; min-width: 0; }
+.store-list { list-style: none; margin: 0 0 12px; padding: 0; }
+.store-list li { border-top: 1px solid var(--rule); padding: 10px 0; }
+.store-list li b { display: block; }
+.store-list .row { margin-top: 6px; }
+.store-list button { min-height: 40px; }

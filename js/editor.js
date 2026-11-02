@@ -1,7 +1,10 @@
 import * as S from './store.js';
 import { drawStore, el, pts, viewBoxFor } from './map-svg.js';
 import { load, save, registerWorker } from './storage.js';
-import { generateLayout } from './layoutgen.js';
+import { generateLayout, fillAisles } from './layoutgen.js';
+import { browserStores } from './stores.js';
+
+const stores = browserStores();
 
 const SNAP = 0.25; // snap grid in meters
 const TAP_PX = 8; // max finger travel for a tap
@@ -38,8 +41,13 @@ const len = text => S.parseLength(text, stepLength);
 
 async function init() {
   registerWorker();
-  const saved = load('layout');
-  L = saved ? S.normalizeLayout(saved) : await fetchShipped();
+  if (new URLSearchParams(location.search).has('new')) {
+    stores.setCurrent(stores.add('New store', generateLayout({ rows: 1 }), 'mine'));
+    history.replaceState(null, '', 'editor.html');
+  }
+  const cur = await stores.current();
+  L = cur.layout;
+  showStore(cur.name, cur.source === 'shipped');
   view = viewBoxFor(L);
   $('step-len').value = stepLength;
   bindUI();
@@ -60,8 +68,16 @@ function commit(change) {
   render();
 }
 
+function showStore(name, shipped) {
+  $('store-name').textContent = shipped
+    ? `Editing ${name}. It comes with Skein, so your first change saves as your own copy.`
+    : `Editing ${name}. Switch stores on the Plan page.`;
+}
+
 function persist() {
-  save('layout', L);
+  stores.saveCurrent(L)
+    .then(r => { showStore(r.name, false); if (r.copied) $('hint').textContent = `${$('hint').textContent} Saved as your own copy: ${r.name}.`.trim(); })
+    .catch(err => { $('hint').textContent = err.message; });
 }
 
 function undo() {
@@ -244,6 +260,7 @@ function renderProps() {
       v => commit(() => { z().match = v.split(',').map(s => s.trim().toUpperCase()).filter(Boolean); }));
     field(box, 'Bays along the wall (0 if unknown)', z().bays, v => setNum(z, 'bays', v, 0), { numeric: true });
     box.append(checkbox('Cold department', z().cold, v => commit(() => { z().cold = v; })));
+    box.append(checkbox('Open floor, no aisles here', z().clear, v => commit(() => { z().clear = v; })));
     note(box, `${z().picks.length} pick point${z().picks.length === 1 ? '' : 's'}.`);
     const r = row(box);
     const add = document.createElement('button');
@@ -524,6 +541,21 @@ function bindUI() {
     }
   });
 
+  $('fill').addEventListener('submit', e => {
+    e.preventDefault();
+    try {
+      const res = fillAisles(L, {
+        first: Number($('f-first').value), last: Number($('f-last').value), rtl: $('f-rtl').checked,
+        side: len($('f-side').value), back: len($('f-back').value), front: len($('f-front').value)
+      });
+      if (L.aisles.length && !confirm(`Replace the ${L.aisles.length} aisles on the map?`)) return;
+      commit(() => { L.aisles = res.aisles; });
+      $('hint').textContent = `Placed ${res.aisles.length} aisles, ${res.pitch} m apart.` + (res.skipped.length ? ` No room for ${res.skipped.join(', ')}.` : '');
+    } catch (err) {
+      $('hint').textContent = err.message;
+    }
+  });
+
   $('quick').addEventListener('submit', e => {
     e.preventDefault();
     const n = Math.round(len($('q-count').value));
@@ -579,7 +611,7 @@ function bindUI() {
   });
   $('placeholder-box').addEventListener('change', e => commit(() => { L.placeholder = e.target.checked; }));
   $('reset-btn').addEventListener('click', async () => {
-    if (!confirm('Replace your layout with the shipped one? You can undo this.')) return;
+    if (!confirm('Replace this layout with the generic one? You can undo this.')) return;
     const shipped = await fetchShipped();
     commit(() => { L = shipped; });
     view = viewBoxFor(L);

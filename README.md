@@ -14,9 +14,9 @@ I'm disabled, and every extra lap of the store costs me more than it costs most 
 
 **Data.** The Kroger Public API gives the aisle, bay and side for each product at a specific store. A Node script looks up about 320 common items at the Kroger on University City Blvd in Blacksburg (store 02900210, at the Prices Fork Road corner) and saves only what routing needs into `data/catalog.json`. The secret key stays on my computer and never reaches the browser. Notes on what the data looks like are in [docs/kroger-data.md](docs/kroger-data.md).
 
-**Store model.** The layout is a JSON file in meters: the outline, entrance, registers, numbered aisles with bay counts, wall departments like Dairy and Meat, and obstacles. Skein turns it into a 0.5 m walking grid with a little clearance from the shelves, and uses Dijkstra's algorithm to get true walking distances between every pair of stops. The shipped layout is a generated placeholder (one row of 25 aisles, like the real store) until I trace the real store on my phone.
+**Store model.** The layout is a JSON file in meters: the outline, entrance, registers, numbered aisles with bay counts, wall departments like Dairy and Meat, and obstacles. Skein turns it into a 0.5 m walking grid with a little clearance from the shelves, and uses Dijkstra's algorithm to get true walking distances between every pair of stops. Skein ships with my traced Kroger University City layout and a generic one. You can keep several stores on your phone: copy a shipped one, make one in the editor, trace one by walking it, or load one from a file. Stores you make stay on your phone, and you can download them to share.
 
-**Setup walk.** To trace the real store, the Setup page counts steps from the phone's motion sensor (peaks in acceleration) and reads the compass while I walk the outside loop, mark the self checkout, and walk each aisle. Turns snap to right angles (or 45 degrees for angled walls), because steel shelving throws the compass off, and the gap at the end of the loop is spread back over the walk. I can mark corners for an odd shaped store, every department Kroger uses (with section numbers like Produce table 2), and custom areas. Walked aisles are lined up, evenly spaced and filled in where I skipped one. The result can be fine tuned in the editor, and the raw walk can be downloaded and reprocessed later.
+**Setup walk.** To trace the real store, the Setup page counts steps from the phone's motion sensor (peaks in acceleration) and reads the compass while I walk the outside loop, mark the self checkout, and walk each aisle. Turns snap to right angles (or 45 degrees for angled walls), because steel shelving throws the compass off, and the gap at the end of the loop is spread back over the walk. I can mark corners for an odd shaped store, every department Kroger uses (with section numbers like Produce table 2), and custom areas. Walked aisles are lined up, evenly spaced and filled in where I skipped one. The result can be fine tuned in the editor, and the raw walk can be downloaded and reprocessed later. For the shipped store I walked only the outside loop, then used the editor's fill tool to spread the 25 aisles evenly, with aisles 1 to 7 stopping short above the open produce floor.
 
 **Routing.** Start at the entrance, visit every stop, end at whichever register makes the trip shortest. Up to 16 stops, Skein uses Held and Karp dynamic programming, which finds the exact shortest order. Above 16 it uses nearest neighbor plus 2-opt and Or-opt with restarts, and a Lagrangian spanning tree bound to say how close it is to the best possible. There are options to leave cold items for last and to make fewer turns into aisles.
 
@@ -90,9 +90,12 @@ js/plan.js          glue between the list, map and solver
 js/physarum.js      Tero and Jones slime mold models
 js/sensors.js       step detection and compass heading
 js/trace.js         walk to store layout
+js/stores.js        saved stores on the phone
+js/ui-stores.js     store picker and manager
 js/departments.js   departments and Kroger location words
 js/layoutgen.js     starting layout generator
-data/store.json     placeholder layout (tools/placeholder.mjs)
+data/stores/        shipped stores (traced University City)
+data/store.json     generic layout (tools/placeholder.mjs)
 data/catalog.json   item locations for store 02900210
 tools/              Kroger scripts, QA screenshots, race table
 proxy/              optional Cloudflare Worker

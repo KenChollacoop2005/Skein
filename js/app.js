@@ -4,6 +4,8 @@ import { prepare, resolveSpot, buildStops, planRoute, WALK_SPEED } from './plan.
 import { renderMatches, renderChips, renderRecent } from './ui-list.js';
 import { drawPlanMap, renderTotals, renderStops } from './ui-route.js';
 import { printRoute, preparePrint } from './ui-print.js';
+import { browserStores } from './stores.js';
+import { mountStores } from './ui-stores.js';
 
 const RECENT_MAX = 6; // recent lists kept
 const TYPE_DELAY = 250; // ms before matching typed text
@@ -20,11 +22,13 @@ const state = {
 
 async function init() {
   registerWorker();
-  const [layout, catalog] = await Promise.all([
-    load('layout') || fetch('data/store.json').then(r => r.json()),
+  const stores = browserStores();
+  const [store, catalog] = await Promise.all([
+    stores.current(),
     fetch('data/catalog.json').then(r => r.json())
   ]);
-  state.ctx = prepare(layout);
+  state.ctx = prepare(store.layout);
+  mountStores(stores, store.id);
   state.catalog = catalog;
   state.index = buildIndex(catalog.items);
   for (const it of catalog.items) state.byId.set(it.id, it);

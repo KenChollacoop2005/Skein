@@ -4,6 +4,7 @@ import { newWalk, positions, markAt, buildLayout, snapStep, ARRANGE } from './tr
 import { DEPARTMENTS, GROUPS, sectionInfo } from './departments.js';
 import { validateLayout, checkReachable, buildGrid, bounds } from './store.js';
 import { drawStore, el, pathD } from './map-svg.js';
+import { browserStores } from './stores.js';
 
 const SAVE_EVERY = 5; // steps between autosaves
 const UNDO_STEPS = 5; // steps removed by the undo button
@@ -448,10 +449,16 @@ function bindFinish() {
   for (const id of ['finish-rows', 'opt-lineup', 'opt-even', 'opt-fill']) $(id).addEventListener('change', rearrange);
   $('save-layout').addEventListener('click', () => {
     if (!built) return;
-    if (load('layout') && !confirm('Replace the map Skein uses now with this traced one?')) return;
-    save('layout', built.layout);
+    const stores = browserStores();
+    try {
+      const id = stores.add(`Traced store ${(walk.started || '').slice(0, 10)}`.trim(), built.layout, 'traced');
+      stores.setCurrent(id);
+    } catch (err) {
+      $('finish-report').textContent = err.message;
+      return;
+    }
     $('open-editor').hidden = false;
-    $('save-layout').textContent = 'Saved. Skein now uses this map';
+    $('save-layout').textContent = 'Saved as a new store. Skein now uses it';
   });
   $('dl-layout').addEventListener('click', () => built && download('store.json', built.layout));
   $('dl-walk').addEventListener('click', () => download(walkName(), walk));

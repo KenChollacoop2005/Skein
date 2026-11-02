@@ -44,6 +44,7 @@
           <button id="delete-btn">Delete</button>
           <button id="fit-btn">Fit</button>
         </div>
+        <p class="small" id="store-name"></p>
         <p class="small muted" id="hint" aria-live="polite"></p>
         <div class="map-box editor-map">
           <svg id="canvas" role="img" aria-label="Store map editor"></svg>
@@ -56,6 +57,24 @@
           <h2>Selected</h2>
           <div id="props"><p class="muted">Tap something on the map to edit it.</p></div>
         </div>
+
+        <details class="panel">
+          <summary>Fill the store with aisles</summary>
+          <form id="fill" class="stack">
+            <p class="muted small">Spreads aisles evenly from left to right, front to back. Aisles stop short of any zone marked "Open floor, no aisles here", like a produce area. Margins are measured in from the outside walls, in meters or steps.</p>
+            <div class="row">
+              <div class="grow"><label for="f-first">First aisle</label><input type="text" id="f-first" value="1" inputmode="numeric"></div>
+              <div class="grow"><label for="f-last">Last aisle</label><input type="text" id="f-last" value="25" inputmode="numeric"></div>
+            </div>
+            <div class="row">
+              <div class="grow"><label for="f-side">Side margin</label><input type="text" id="f-side" value="4"></div>
+              <div class="grow"><label for="f-back">Back margin</label><input type="text" id="f-back" value="7"></div>
+              <div class="grow"><label for="f-front">Front margin</label><input type="text" id="f-front" value="9"></div>
+            </div>
+            <label class="check"><input type="checkbox" id="f-rtl"> Aisle 1 is on the right</label>
+            <button type="submit" class="primary">Place aisles</button>
+          </form>
+        </details>
 
         <details class="panel">
           <summary>Generate a starting layout</summary>
@@ -129,7 +148,7 @@
               <button id="apply-btn">Load this text</button>
             </div>
             <label class="check"><input type="checkbox" id="placeholder-box"> Still a placeholder (shows the banner in the app)</label>
-            <button id="reset-btn">Start over from the shipped layout</button>
+            <button id="reset-btn">Start over from the generic layout</button>
           </div>
         </details>
       </section>

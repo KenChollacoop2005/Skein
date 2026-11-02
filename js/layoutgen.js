@@ -1,4 +1,4 @@
-import { normalizeLayout } from './store.js';
+import { normalizeLayout, bounds, pointInPolygon, aisleFootprint } from './store.js';
 
 export const GEN = { width: 92, depth: 48, aisles: 25, first: 1, rows: 1, rtl: false }; // default store
 const WALL = 3; // depth of wall departments
@@ -63,4 +63,54 @@ export function generateLayout(opts = {}) {
     name: 'Kroger - University City', placeholder: true,
     outline: rect(0, 0, W, H), entrance: [11, H - 1], registers, aisles, zones, obstacles
   });
+}
+
+export const FILL = { first: 1, last: 25, rtl: false, side: 4, back: 7, front: 9, gap: 1.5 }; // aisle fill defaults
+const CLIP_STEP = 0.25; // meters trimmed per try to fit the outline
+const MIN_AISLE = 3; // shortest aisle kept
+
+// Longest piece of [a, b] after cutting out the blocked spans
+function longestFree(a, b, cuts) {
+  let pieces = [[a, b]];
+  for (const [c0, c1] of cuts) {
+    pieces = pieces.flatMap(([p0, p1]) => (c1 <= p0 || c0 >= p1 ? [[p0, p1]] : [[p0, Math.min(p1, c0)], [Math.max(p0, c1), p1]].filter(([x, y]) => y - x > 0)));
+  }
+  return pieces.sort((x, y) => (y[1] - y[0]) - (x[1] - x[0]))[0] || null;
+}
+
+// Evenly spaced front to back aisles inside the outline
+export function fillAisles(L, opts = {}) {
+  const o = { ...FILL, ...opts };
+  const b = bounds(L.outline);
+  const xL = o.left ?? b.x0 + o.side, xR = o.right ?? b.x1 - o.side;
+  const yB = o.backLine ?? b.y0 + o.back, yF = o.frontLine ?? b.y1 - o.front;
+  const n = Math.round(o.last) - Math.round(o.first) + 1;
+  if (!(n >= 1) || !(xR > xL) || !(yF > yB)) throw new Error('Check the aisle numbers and margins.');
+  const pitch = (xR - xL) / n;
+  const shelf = pitch >= 3.2 ? 0.6 : pitch >= 2.4 ? 0.5 : 0.4;
+  const width = Math.floor((pitch - 2 * shelf) * 100) / 100 - 0.02;
+  if (width < MIN_WALK) throw new Error(`${n} aisles don't fit. Widen the space or use fewer aisles.`);
+  const half = width / 2 + shelf;
+  const blocks = [...(L.zones || []).filter(z => z.clear).map(z => z.polygon), ...(L.obstacles || []).map(x => x.polygon)].filter(p => p && p.length > 2).map(bounds);
+  const aisles = [];
+  const skipped = [];
+  for (let k = 0; k < n; k++) {
+    const col = o.rtl ? n - 1 - k : k;
+    const cx = r2(xL + pitch * (col + 0.5));
+    const cuts = blocks.filter(q => q.x0 < cx + half && q.x1 > cx - half).map(q => [q.y0 - o.gap, q.y1 + o.gap]);
+    const piece = longestFree(yB, yF, cuts);
+    const number = String(Math.round(o.first) + k);
+    if (!piece) { skipped.push(number); continue; }
+    let [back, front] = piece;
+    const make = () => ({ number, start: [cx, r2(front)], end: [cx, r2(back)], width: r2(width), shelf, bays: Math.max(1, Math.round((front - back) / BAY)), bay1: 'start', flip: false, cold: false });
+    let a = make();
+    while (front - back >= MIN_AISLE && !aisleFootprint(a).every(p => pointInPolygon(p, L.outline))) {
+      front -= CLIP_STEP;
+      back += CLIP_STEP;
+      a = make();
+    }
+    if (front - back < MIN_AISLE) skipped.push(number);
+    else aisles.push(a);
+  }
+  return { aisles, skipped, pitch: r2(pitch), width: r2(width) };
 }

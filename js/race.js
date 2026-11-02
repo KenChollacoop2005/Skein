@@ -1,4 +1,5 @@
 import { load, registerWorker } from './storage.js';
+import { browserStores } from './stores.js';
 import { parseList, buildIndex, matchLine } from './match.js';
 import { prepare, resolveSpot, buildStops, compareMethods, lineFor } from './plan.js';
 import { moldGraph, foodNodes, TeroModel, networkOrder, JonesModel, TERO } from './physarum.js';
@@ -19,7 +20,7 @@ let ctx, index, jones = null, playing = !reduced, speed = 1, runId = 0;
 async function init() {
   registerWorker();
   const [layout, catalog] = await Promise.all([
-    load('layout') || fetch('data/store.json').then(r => r.json()),
+    browserStores().current().then(s => s.layout),
     fetch('data/catalog.json').then(r => r.json())
   ]);
   ctx = prepare(layout);

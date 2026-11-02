@@ -386,6 +386,7 @@ export function normalizeLayout(raw) {
       match: (z.match || []).map(String).filter(Boolean),
       cold: !!z.cold,
       bays: Math.max(0, Math.round(Number(z.bays) || 0)),
+      clear: !!z.clear,
       polygon: poly(z.polygon),
       picks: poly(z.picks)
     })),

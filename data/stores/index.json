@@ -1,0 +1,17 @@
+{
+ "default": "kroger-university-city",
+ "stores": [
+  {
+   "id": "kroger-university-city",
+   "name": "Kroger University City (traced)",
+   "file": "data/stores/kroger-university-city.json",
+   "note": "Traced by walking the store. Aisles are spaced evenly, not walked."
+  },
+  {
+   "id": "generic",
+   "name": "Generic Kroger layout",
+   "file": "data/store.json",
+   "note": "A made up starting point with one row of 25 aisles."
+  }
+ ]
+}

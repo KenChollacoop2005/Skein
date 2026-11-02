@@ -161,3 +161,17 @@ test('departments map to Kroger words with fallbacks', () => {
   assert.ok(z('Deli').match.includes('SUSHI'));
   assert.deepEqual(z('Hot case').match, ['HOT CASE']);
 });
+
+test('loop closure keeps walls straight when one axis is off', () => {
+  const pts = [[0, 0], [0, -10], [8, -10], [8, 0], [3, 0]];
+  const fixed = T.closeLoop(pts, 4, [0, 0]);
+  assert.ok(Math.abs(fixed[1][0]) < 1e-9 && Math.abs(fixed[2][0] - fixed[3][0]) < 1e-9, 'vertical walls stay vertical');
+  assert.ok(Math.hypot(...fixed[4]) < 1e-9);
+});
+
+test('a loop that ends exactly on its start keeps its corners', () => {
+  const walk = T.newWalk(0.7, 90);
+  for (const [n, h] of [[20, 0], [15, 90], [20, 180], [15, 270]]) for (let i = 0; i < n; i++) walk.steps.push({ t: 0, h, r: h });
+  T.markAt(walk, 'perimeter-end');
+  assert.equal(T.buildLayout(walk).layout.outline.length, 4);
+});

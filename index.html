@@ -35,6 +35,11 @@
   <div class="banner" id="sample-banner" hidden>Sample item data. These aisle locations are made up until the real catalog is built.</div>
 
   <main class="wrap">
+    <div class="store-bar no-print">
+      <label for="store-select">Store</label>
+      <select id="store-select"></select>
+      <button id="stores-btn">Stores</button>
+    </div>
     <div class="app-grid">
       <section class="no-print" aria-labelledby="list-h">
         <div class="panel stack">
@@ -93,6 +98,20 @@
     <p>The name comes from Ariadne's skein of thread, which led Theseus out of the labyrinth.</p>
     <p>The store layout and item locations can be off, so treat the route as a good guess and tell me what's wrong.</p>
     <p class="muted small">Ken Chollacoop</p>
+  </dialog>
+
+  <dialog class="sheet" id="stores-sheet">
+    <div class="sheet-head"><h2>Stores</h2><button class="icon" data-close aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>
+    <ul class="store-list" id="store-list"></ul>
+    <div class="stack">
+      <label class="btn" for="store-file">Add a store from a file</label>
+      <input type="file" id="store-file" accept=".json,application/json" hidden>
+      <a class="btn" href="editor.html?new=1">Make a new store in the editor</a>
+      <a class="btn" href="setup.html">Trace a store by walking it</a>
+      <p class="small" id="stores-status" aria-live="polite"></p>
+      <p class="muted small">Files can be a store.json or a walk file from Setup. Stores you add are saved on this phone only, so download one to keep a copy or share it.</p>
+    </div>
   </dialog>
 
   <dialog class="sheet" id="settings">

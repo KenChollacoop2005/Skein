@@ -36,7 +36,7 @@ export function drawStore(svg, L, opts = {}) {
     const sel = selected && selected.kind === 'zone' && selected.index === i;
     el('polygon', {
       points: pts(z.polygon), fill: TINTS[i % TINTS.length], stroke: sel ? '#B23B2E' : '#D8D0C2',
-      'stroke-width': sel ? 0.2 : 0.08, 'data-kind': 'zone', 'data-index': i
+      'stroke-width': sel ? 0.2 : 0.08, 'stroke-dasharray': z.clear && !sel ? '0.5 0.3' : null, 'data-kind': 'zone', 'data-index': i
     }, g);
   });
   (L.obstacles || []).forEach((o, i) => {
