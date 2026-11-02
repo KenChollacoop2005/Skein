@@ -5,7 +5,7 @@
    "id": "kroger-university-city",
    "name": "Kroger University City (traced)",
    "file": "data/stores/kroger-university-city.json",
-   "note": "Traced by walking the store. Aisles are spaced evenly, not walked."
+   "note": "Traced by walking the store. Aisles 2 to 25 are spaced evenly, not walked."
   },
   {
    "id": "generic",

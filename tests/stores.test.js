@@ -19,7 +19,7 @@ test('the traced store is the default and shipped stores are listed', async () =
   const s = makeStores(memory());
   const cur = await s.current();
   assert.equal(cur.id, 'shipped:kroger-university-city');
-  assert.equal(cur.layout.aisles.length, 25);
+  assert.equal(cur.layout.aisles.length, 24);
   const ids = (await s.list()).map(x => x.id);
   assert.deepEqual(ids, ['shipped:kroger-university-city', 'shipped:generic']);
 });
@@ -81,8 +81,11 @@ test('the traced store fits the walk description', async () => {
   const L = readJSON('data/stores/kroger-university-city.json');
   const produce = L.zones.find(z => z.name === 'Produce');
   assert.ok(produce.clear);
-  const short = L.aisles.filter(a => a.start[1] < 40).map(a => a.number);
-  assert.deepEqual(short, ['1', '2', '3', '4', '5', '6', '7']);
+  const short = L.aisles.filter(a => a.start[1] < 38).map(a => a.number);
+  assert.deepEqual(short, ['2', '3', '4', '5'], 'beer and wine aisles stop above produce');
+  assert.equal(L.aisles[0].number, '2', 'no aisle 1 in the Kroger data');
+  const meat = L.zones.find(z => z.name === 'Meat');
+  assert.ok(meat.picks.length >= 6 && meat.picks[0][0] > meat.picks[meat.picks.length - 1][0], 'meat spans the back wall, bay 1 on the right');
   const xs = L.aisles.map(a => a.start[0]);
   assert.ok(xs.every((x, i) => i === 0 || x > xs[i - 1]), 'aisle 1 on the left, 25 on the right');
 });
