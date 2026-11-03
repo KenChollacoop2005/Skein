@@ -322,3 +322,17 @@ dialog.sheet::backdrop { background: rgba(36, 34, 31, 0.35); }
 .store-list li b { display: block; }
 .store-list .row { margin-top: 6px; }
 .store-list button { min-height: 40px; }
+
+/* Walking and checklist */
+.follow { margin: 4px 0 12px; }
+.follow-next { font-weight: 700; font-size: 19px; margin: 10px 0 8px; }
+.item-check { display: flex; align-items: center; gap: 10px; min-height: 40px; font-weight: 400; margin: 0; cursor: pointer; }
+.stop-body { flex: 1 1 auto; min-width: 0; }
+.stops .num.done { background: var(--done); }
+.stops li.next .num { box-shadow: 0 0 0 3px var(--ink); }
+.stops li.done .item-check { color: var(--ink-2); text-decoration: line-through; }
+.stop-mark { cursor: pointer; }
+@media print {
+  .item-check { min-height: 0; gap: 4px; }
+  .stops li.done .item-check { text-decoration: none; color: inherit; }
+}

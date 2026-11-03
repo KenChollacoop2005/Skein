@@ -20,6 +20,8 @@ I'm disabled, and every extra lap of the store costs me more than it costs most 
 
 **Routing.** Start at the entrance, visit every stop, end at whichever register makes the trip shortest. Up to 16 stops, Skein uses Held and Karp dynamic programming, which finds the exact shortest order. Above 16 it uses nearest neighbor plus 2-opt and Or-opt with restarts, and a Lagrangian spanning tree bound to say how close it is to the best possible. There are options to leave cold items for last and to make fewer turns into aisles.
 
+**Walking the route.** After planning, Start walking puts a dot on the route that moves with your steps (counted from the phone's motion sensor, with a Step button if there isn't one). It doesn't try to find your exact spot. It just follows the route and waits at each stop until you check it off, and checking a stop moves the dot there, which fixes any drift. Every item has a checkbox in the list, and tapping a stop on the map checks it too. Progress is saved if the page reloads.
+
 **The race.** The race page compares the planners with two slime mold models. The Tero, Kobayashi and Nakagaki tube model grows a network between the items, and the route walks that network. The Jones agent model is shown as an animation.
 
 ## The race
@@ -91,6 +93,7 @@ js/physarum.js      Tero and Jones slime mold models
 js/sensors.js       step detection and compass heading
 js/trace.js         walk to store layout
 js/stores.js        saved stores on the phone
+js/follow.js        place along the route and the checklist
 js/ui-stores.js     store picker and manager
 js/departments.js   departments and Kroger location words
 js/layoutgen.js     starting layout generator

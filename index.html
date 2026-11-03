@@ -85,6 +85,22 @@
           <p class="muted small no-print" id="place-hint" hidden></p>
           <div class="map-box" id="map"></div>
           <div class="totals" id="totals"></div>
+          <div class="follow no-print" id="follow" hidden>
+            <div class="row">
+              <button class="primary grow" id="walk-btn">Start walking</button>
+              <button id="clear-trip">Clear checks</button>
+            </div>
+            <div id="follow-live" hidden>
+              <p class="follow-next" id="follow-next" aria-live="polite"></p>
+              <div class="row">
+                <button id="here-btn">I'm here</button>
+                <button class="primary grow" id="check-next">Check off this stop</button>
+                <button id="step-live" hidden>Step</button>
+              </div>
+              <p class="small muted">The dot is a guess from your steps. It waits at each stop until you check it off, and checking a stop moves it there.</p>
+            </div>
+            <p class="small muted" id="follow-hint">Tick items in the list or tap a stop on the map to check it off.</p>
+          </div>
           <ol class="stops" id="stops"></ol>
         </div>
       </section>

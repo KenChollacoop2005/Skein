@@ -107,13 +107,19 @@ export function problemFor(dist, stops, opts = {}) {
   });
 }
 
-export function lineFor(ctx, dist, result) {
-  const line = [];
+// Route line plus the index where each stop ends
+export function lineWithBreaks(ctx, dist, result) {
+  const line = [], breaks = [0];
   for (let k = 1; k < result.nodes.length; k++) {
     const seg = smoothLine(ctx.grid, dist.ap.path(result.nodes[k - 1], result.nodes[k]));
     line.push(...(line.length ? seg.slice(1) : seg));
+    breaks.push(line.length - 1);
   }
-  return line;
+  return { line, breaks };
+}
+
+export function lineFor(ctx, dist, result) {
+  return lineWithBreaks(ctx, dist, result).line;
 }
 
 // Full plan for a set of stops
@@ -135,7 +141,7 @@ export function planRoute(ctx, stops, opts = {}) {
     registerPoint: ctx.L.registers[register],
     baseline: baseline.length,
     turnCost: opts.fewerTurns ? result.length - plain.length : 0,
-    line: lineFor(ctx, dist, result),
+    ...lineWithBreaks(ctx, dist, result),
     result,
     dist
   };

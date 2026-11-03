@@ -2,7 +2,9 @@ import { load, save, registerWorker } from './storage.js';
 import { normalize, parseList, buildIndex, matchLine, searchTerms } from './match.js';
 import { prepare, resolveSpot, buildStops, planRoute, WALK_SPEED } from './plan.js';
 import { renderMatches, renderChips, renderRecent } from './ui-list.js';
-import { drawPlanMap, renderTotals, renderStops } from './ui-route.js';
+import { drawPlanMap, drawLive, renderTotals, renderStops } from './ui-route.js';
+import { routeTrack, Trip } from './follow.js';
+import { StepDetector } from './sensors.js';
 import { printRoute, preparePrint } from './ui-print.js';
 import { browserStores } from './stores.js';
 import { mountStores } from './ui-stores.js';
@@ -10,11 +12,16 @@ import { mountStores } from './ui-stores.js';
 const RECENT_MAX = 6; // recent lists kept
 const TYPE_DELAY = 250; // ms before matching typed text
 const LIVE_TIMEOUT = 6000; // ms to wait for a live lookup
+const SENSOR_WAIT = 3000; // ms before offering the Step button
+const SAVE_STEPS = 5; // steps between progress saves
+const DEFAULT_STEP = 0.7; // step length without a Setup walk
+const ARRIVE_BUZZ = 80; // ms vibration when you reach a stop
 
 const $ = id => document.getElementById(id);
 const state = {
   ctx: null, catalog: null, index: null, byId: new Map(),
   rows: [], open: null, plan: null, placing: null,
+  track: null, trip: null, layers: null, following: false, steps: 0, motion: false, wake: null,
   choices: load('choices', {}), places: load('places', {}), skips: load('skips', {}),
   live: new Map(),
   settings: { speed: load('speed', WALK_SPEED), liveUrl: load('liveUrl', '') }
@@ -120,7 +127,14 @@ function onPlace(key) {
 }
 
 function onMapClick(e) {
-  if (!state.placing) return;
+  if (!state.placing) {
+    const mark = e.target.closest && e.target.closest('[data-stop]');
+    if (mark && state.trip) {
+      state.trip.toggleStop(Number(mark.dataset.stop));
+      tripChanged();
+    }
+    return;
+  }
   const svg = e.currentTarget;
   const p = new DOMPoint(e.clientX, e.clientY).matrixTransform(svg.getScreenCTM().inverse());
   state.places[state.placing] = [Math.round(p.x * 4) / 4, Math.round(p.y * 4) / 4];
@@ -166,11 +180,13 @@ function plan() {
   const opts = { coldLast: $('opt-cold').checked, fewerTurns: $('opt-turns').checked };
   const stops = buildStops(state.ctx, spots);
   state.plan = planRoute(state.ctx, stops, opts);
-  const svg = svgNode();
-  $('map').replaceChildren(svg);
-  drawPlanMap(svg, state.ctx.L, state.plan);
+  state.track = routeTrack(state.plan.line, state.plan.breaks);
+  state.trip = new Trip(state.track, state.plan.stops.map(s => s.items.length));
+  const saved = load('trip', null);
+  if (saved && saved.key === tripKey(state.plan)) state.trip.restore(saved);
+  $('follow').hidden = false;
   renderTotals($('totals'), state.plan, state.settings.speed);
-  renderStops($('stops'), state.plan);
+  renderTrip();
   $('route-hint').hidden = true;
   $('print-btn').disabled = false;
   const missing = state.rows.filter(r => !r.spot && !r.skipped).length;
@@ -183,6 +199,94 @@ function plan() {
   }
   preparePrint(storeName(), state.plan.stops.length);
 }
+
+// Walking along the route
+
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const tripKey = p => `${p.stops.map(s => s.items.join('+')).join('|')}|${Math.round(p.length)}`;
+const saveTrip = () => save('trip', { key: tripKey(state.plan), ...state.trip.toJSON() });
+
+function renderTrip() {
+  const svg = svgNode();
+  $('map').replaceChildren(svg);
+  state.layers = drawPlanMap(svg, state.ctx.L, state.plan, state.trip);
+  if (state.following || state.trip.d > 0) drawLive(state.layers, state.track, state.trip);
+  renderStops($('stops'), state.plan, state.trip, (i, j) => { state.trip.toggleItem(i, j); tripChanged(); });
+  followText();
+}
+
+function tripChanged() {
+  saveTrip();
+  renderTrip();
+}
+
+function followText() {
+  const t = state.trip;
+  const n = t.next();
+  const out = `Register ${state.plan.register + 1}`;
+  let msg;
+  if (n < 0) msg = t.allDone() ? `All done. Head to ${out}.` : `Head to ${out}. Some items are still unchecked in the list.`;
+  else {
+    const s = state.plan.stops[n];
+    msg = t.isNear()
+      ? `You should be at stop ${n + 1}: ${s.items.map(cap).join(', ')}. ${s.where}.`
+      : `Next, stop ${n + 1}: ${s.items.map(cap).join(', ')}. ${s.where}. About ${Math.round(t.distanceToNext())} m.`;
+  }
+  $('follow-next').textContent = msg;
+  $('check-next').disabled = n < 0;
+}
+
+function onStep() {
+  const wasNear = state.trip.isNear();
+  const len = load('stepLength', DEFAULT_STEP) || DEFAULT_STEP;
+  state.trip.step(len);
+  if (++state.steps % SAVE_STEPS === 0) saveTrip();
+  if (!wasNear && state.trip.isNear() && state.trip.next() >= 0) navigator.vibrate?.(ARRIVE_BUZZ);
+  drawLive(state.layers, state.track, state.trip);
+  followText();
+}
+
+const detector = new StepDetector();
+function onMotion(e) {
+  const a = e.accelerationIncludingGravity;
+  if (!a || a.x == null) return;
+  state.motion = true;
+  if (detector.push(e.timeStamp, a.x, a.y, a.z) && state.following) onStep();
+}
+
+async function startMotion() {
+  try {
+    if (typeof DeviceMotionEvent !== 'undefined' && DeviceMotionEvent.requestPermission) {
+      if (await DeviceMotionEvent.requestPermission() === 'denied') throw new Error('denied');
+    }
+    addEventListener('devicemotion', onMotion);
+  } catch { /* falls back to the Step button */ }
+  setTimeout(() => { if (!state.motion) $('step-live').hidden = false; }, SENSOR_WAIT);
+}
+
+async function setWake(on) {
+  try {
+    if (on && !state.wake && navigator.wakeLock) state.wake = await navigator.wakeLock.request('screen');
+    else if (!on && state.wake) { await state.wake.release(); state.wake = null; }
+  } catch { state.wake = null; }
+}
+
+function toggleWalking() {
+  state.following = !state.following;
+  $('walk-btn').textContent = state.following ? 'Stop walking' : 'Start walking';
+  $('follow-live').hidden = !state.following;
+  $('follow-hint').hidden = state.following;
+  if (state.following) {
+    startMotion();
+    drawLive(state.layers, state.track, state.trip);
+  } else {
+    saveTrip();
+  }
+  setWake(state.following);
+  followText();
+}
+
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && state.following) { state.wake = null; setWake(true); } });
 
 const storeName = () => state.catalog?.store?.name || state.ctx.L.name;
 
@@ -200,6 +304,18 @@ function bindUI() {
     if (innerWidth < 900) $('route-panel').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
   $('save-list-btn').addEventListener('click', saveList);
+  $('walk-btn').addEventListener('click', toggleWalking);
+  $('step-live').addEventListener('click', () => { if (state.following) onStep(); });
+  $('here-btn').addEventListener('click', () => { state.trip.here(); saveTrip(); drawLive(state.layers, state.track, state.trip); followText(); });
+  $('check-next').addEventListener('click', () => {
+    const n = state.trip.next();
+    if (n >= 0) { state.trip.toggleStop(n); tripChanged(); }
+  });
+  $('clear-trip').addEventListener('click', () => {
+    if (!confirm('Uncheck everything and start the route over?')) return;
+    state.trip = new Trip(state.track, state.plan.stops.map(s => s.items.length));
+    tripChanged();
+  });
   for (const id of ['opt-cold', 'opt-turns']) {
     $(id).addEventListener('change', () => {
       save(id === 'opt-cold' ? 'coldLast' : 'fewerTurns', $(id).checked);
