@@ -1,0 +1,8 @@
+# old documents and specs
+/Skein Archive/
+
+# secrets
+.env
+
+# dev dependencies
+node_modules/

@@ -1,9 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#F3EEE4"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M120 400 V170 h70 V340 h70 V170 h70 V340 h62" stroke="#B23B2E" stroke-width="34"/>
-    <path d="M120 400 V170 h70 V340 h70 V170 h70 V340 h62" stroke="#F3EEE4" stroke-width="6" stroke-dasharray="14 22" opacity="0.6"/>
-  </g>
-  <circle cx="120" cy="400" r="26" fill="#24221F"/>
-  <circle cx="392" cy="340" r="26" fill="#3B4A6B"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<defs><clipPath id="b"><circle cx="16" cy="16" r="12.3"/></clipPath></defs>
+<circle cx="16" cy="16" r="12.3" fill="#D9A0A3"/>
+<g clip-path="url(#b)" fill="none" stroke="#A9606A" stroke-width="1.9" stroke-linecap="round"><path d="M25.87 23.34 Q19.50 14.73 18.84 4.03"/><path d="M21.34 27.08 Q11.43 17.66 12.97 4.08"/><path d="M15.90 28.30 Q7.82 18.98 8.01 6.65"/><path d="M28.24 14.82 Q15.63 14.99 5.86 22.96"/><path d="M27.34 20.78 Q18.25 22.20 10.39 26.94"/></g>
+<circle cx="16" cy="16" r="12.3" fill="none" stroke="#3A2E26" stroke-width="2.3"/>
 </svg>
